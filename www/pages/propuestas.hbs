@@ -1,0 +1,15 @@
+<ons-list>
+
+	<ons-list-item modifier="material" >
+	<center><h2>Propuestas presentadas {{propuestas.length}}</h2></center>
+    </ons-list-item>
+
+	{{#each propuestas}}
+
+	<ons-list-item modifier="chevron material" onclick="Propuesta({{id}})" tappable>
+		<div class="left"><center><h2>{{inc @index}}</h2></center></div>
+		<div class="center"><span class="list-item__title">{{titulo}}</span>
+		<span class="list-item__subtitle">{{fecha}} - {{estatus}}</span></div>
+	</ons-list-item>
+	{{/each}}
+</ons-list>

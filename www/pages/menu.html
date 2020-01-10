@@ -1,0 +1,183 @@
+<ons-navigator swipeable id="navigateINDEX" animation="slide" page="home.html" animation-options="{duration: 0.2, delay: 0.1, timing: 'ease-in'}"></ons-navigator>
+<ons-progress-bar value="20" id="progress"></ons-progress-bar>
+
+
+
+<template id="home.html" >
+  <ons-page>
+  <ons-toolbar>
+      <div class="left">
+      </div>
+      <div class="center">
+        Diputados
+      </div>
+  </ons-toolbar>
+  <div id="transmision"></div>  
+  <div id="diputados"></div>  
+  <ons-speed-dial position="bottom right" direction="up">
+    <ons-fab>
+      <ons-icon icon="md-settings"></ons-icon>
+    </ons-fab>
+    <ons-speed-dial-item onclick="changePage('mypetitions.html');">
+      <ons-icon icon="fa-copy"></ons-icon> 
+    </ons-speed-dial-item>
+    <ons-speed-dial-item onclick="GetHome();">
+      <ons-icon icon="fa-home"></ons-icon> 
+    </ons-speed-dial-item>
+    <ons-speed-dial-item onclick="changePage('acount.html');">
+      <ons-icon icon="fa-user-alt"></ons-icon> 
+    </ons-speed-dial-item>
+     <ons-speed-dial-item onclick="changePage('editacount.html');">
+      <ons-icon icon="fa-user-edit"></ons-icon> 
+    </ons-speed-dial-item>
+     <ons-speed-dial-item onclick="changePage('acount.html');">
+      <ons-icon icon="fa-power-off"></ons-icon> 
+    </ons-speed-dial-item>
+  </ons-speed-dial>
+  </ons-page>
+</template>
+
+ <template id="mypetitions.html" >
+  <ons-page>
+  <ons-toolbar>
+      <div class="left">
+        <ons-back-button></ons-back-button>
+      </div>
+      <div class="center">
+        Mis peticiones
+      </div>
+  </ons-toolbar>
+    <div id="peticiones"></div> 
+  </ons-page> 
+</template>
+
+
+
+<template id="solicitud.html">
+    <ons-page>
+  <ons-toolbar>
+      <div class="left">
+        <ons-back-button></ons-back-button>
+      </div>
+      <div class="center">
+        Solicitudes
+      </div>
+  </ons-toolbar>
+    <div id="solicitud">
+    </div>
+  </ons-page>
+</template>
+
+<template id="profile.html" >
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button></ons-back-button>
+      </div>
+      <div class="center">
+        Perfíl
+      </div>
+    </ons-toolbar>
+    <div id="perfil">
+    </div>
+  </ons-page>
+</template>
+
+
+<template id="propuestas.html" >
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button></ons-back-button>
+      </div>
+      <div class="center">
+        Propuestas
+      </div>
+    </ons-toolbar>
+    <div id="propuesta">
+    </div>
+  </ons-page>
+</template>
+
+
+<template id="propuesta.html" >
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button></ons-back-button>
+      </div>
+      <div class="center">
+        Propuesta
+      </div>
+    </ons-toolbar>
+    <div id="leerpropuesta">
+    </div>
+  </ons-page>
+</template>
+
+<template id="ranking.html" >
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button></ons-back-button>
+      </div>
+      <div class="center">
+        Ranking
+      </div>
+    </ons-toolbar>
+    <div id="ranking">
+    </div>
+  </ons-page>
+</template>
+
+
+
+<template id="acount.html" >
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button></ons-back-button>
+      </div>
+      <div class="center">
+        Perfíl
+      </div>
+    </ons-toolbar>
+    <div id="cuenta">
+    </div>
+  </ons-page>
+</template>
+
+<template id="editacount.html" >
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button></ons-back-button>
+      </div>
+      <div class="center">
+        Editar cuenta
+      </div>
+    </ons-toolbar>
+    <div id="Editar cuenta">
+    </div>
+  </ons-page>
+</template>
+
+
+<template id="transmisionx.html" >
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button></ons-back-button>
+      </div>
+      <div class="center">
+        Transmisión en vivo
+      </div>
+    </ons-toolbar>
+    <div id="transmisionx">
+    </div>
+  </ons-page>
+</template>
+
+
+
+    

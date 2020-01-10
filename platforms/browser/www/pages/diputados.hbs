@@ -1,0 +1,11 @@
+<ons-list>
+	{{#each lista}}
+	<ons-list-item modifier="chevron material" onclick="LoadProfile({{id}})" tappable>
+		<div class="left"><img class="list-item__thumbnail" src="http://172.10.200.66:3000{{img.mini.url}}" /></div>
+		<div class="center"><span class="list-item__title">{{nombre}} {{apellido}}</span>
+		<span class="list-item__subtitle">{{distrito}}</span></div>
+	</ons-list-item>
+	{{/each}}
+</ons-list>
+
+
