@@ -1,50 +1,71 @@
-<ons-navigator swipeable id="navigateINDEX" animation="slide" page="home.html" animation-options="{duration: 0.2, delay: 0.1, timing: 'ease-in'}"></ons-navigator>
+<ons-splitter  >
+    <ons-splitter-side id="menu" side="right" width="90%"  collapse swipeable style="width: 100%; height: 100vh; background: #5c666c; position: absolute; z-index: 99999999999999999999 !important;">
+      <ons-page>
+        <div style="width: 100%; height: 100vh; background: #5c666c; position: absolute; z-index: 99999999999999999999 !important;">
+        <ons-list style="background: #5c666c; color:#fff;">
+          <ons-list-item  style="color:#fff;" onclick="GetHome();" tappable>
+            Inicio
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="GetHome();" tappable>
+            Mi cuenta
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="changePage('mypetitions.html');" tappable>
+            <h3>Conoce a tu diputado</h3><br/>
+            <p>y enviale una solicitud.</p>
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="changePage('mypetitions.html');" tappable>
+            Mis Solicitudes
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="changePage('mypetitions.html');" tappable>
+            Privacidad
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="changePage('mypetitions.html');" tappable>
+            Tutorial
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="changePage('mypetitions.html');" tappable>
+            Ayuda y Soporte
+          </ons-list-item>
+        </ons-list>
+        </div>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-navigator swipeable id="navigateINDEX" animation="slide" page="home.html" animation-options="{duration: 0.2, delay: 0.1, timing: 'ease-in'}">
+    </ons-navigator>
+ 
 <ons-progress-bar value="20" id="progress"></ons-progress-bar>
-
-
 
 <template id="home.html" >
   <ons-page>
-  <ons-toolbar>
+  <ons-toolbar class="root-tool">
       <div class="left">
       </div>
-      <div class="center">
+      <div class="center" style="color:#fff;">
         Diputados
+      </div>
+      <div class="right" style="color:#fff !important;">
+         <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
       </div>
   </ons-toolbar>
   <div id="transmision"></div>  
-  <div id="diputados"></div>  
-  <ons-speed-dial position="bottom right" direction="up">
-    <ons-fab>
-      <ons-icon icon="md-settings"></ons-icon>
-    </ons-fab>
-    <ons-speed-dial-item onclick="changePage('mypetitions.html');">
-      <ons-icon icon="fa-copy"></ons-icon> 
-    </ons-speed-dial-item>
-    <ons-speed-dial-item onclick="GetHome();">
-      <ons-icon icon="fa-home"></ons-icon> 
-    </ons-speed-dial-item>
-    <ons-speed-dial-item onclick="changePage('acount.html');">
-      <ons-icon icon="fa-user-alt"></ons-icon> 
-    </ons-speed-dial-item>
-     <ons-speed-dial-item onclick="changePage('editacount.html');">
-      <ons-icon icon="fa-user-edit"></ons-icon> 
-    </ons-speed-dial-item>
-     <ons-speed-dial-item onclick="changePage('acount.html');">
-      <ons-icon icon="fa-power-off"></ons-icon> 
-    </ons-speed-dial-item>
-  </ons-speed-dial>
+  <div id="diputados" ></div>  
   </ons-page>
 </template>
 
  <template id="mypetitions.html" >
   <ons-page>
-  <ons-toolbar>
-      <div class="left">
+    <ons-toolbar class="root-tool">
+      <div class="left" style="color:#fff !important;">
         <ons-back-button></ons-back-button>
       </div>
-      <div class="center">
+      <div class="center" style="color:#fff !important;">
         Mis peticiones
+      </div>
+       <div class="right" style="color:#fff !important;">
+         <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
       </div>
   </ons-toolbar>
     <div id="peticiones"></div> 
@@ -55,12 +76,18 @@
 
 <template id="solicitud.html">
     <ons-page>
-  <ons-toolbar>
-      <div class="left">
+    <ons-toolbar class="root-tool">
+
+      <div class="left" style="color:#fff !important;">
         <ons-back-button></ons-back-button>
       </div>
-      <div class="center">
+      <div class="center" style="color:#fff !important;">
         Solicitudes
+      </div>
+       <div class="right" style="color:#fff !important;">
+         <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
       </div>
   </ons-toolbar>
     <div id="solicitud">
@@ -70,12 +97,18 @@
 
 <template id="profile.html" >
   <ons-page>
-    <ons-toolbar>
-      <div class="left">
+      <ons-toolbar class="root-tool">
+
+      <div class="left" style="color:#fff !important;">
         <ons-back-button></ons-back-button>
       </div>
-      <div class="center">
+      <div class="center" style="color:#fff !important;">
         Perfíl
+      </div>
+       <div class="right" style="color:#fff !important;">
+         <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
       </div>
     </ons-toolbar>
     <div id="perfil">
@@ -86,12 +119,18 @@
 
 <template id="propuestas.html" >
   <ons-page>
-    <ons-toolbar>
-      <div class="left">
+      <ons-toolbar class="root-tool">
+
+      <div class="left" style="color:#fff !important;">
         <ons-back-button></ons-back-button>
       </div>
-      <div class="center">
+      <div class="center" style="color:#fff !important;">
         Propuestas
+      </div>
+       <div class="right" style="color:#fff !important;">
+         <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
       </div>
     </ons-toolbar>
     <div id="propuesta">
@@ -102,12 +141,18 @@
 
 <template id="propuesta.html" >
   <ons-page>
-    <ons-toolbar>
-      <div class="left">
+      <ons-toolbar class="root-tool">
+
+      <div class="left" style="color:#fff !important;">
         <ons-back-button></ons-back-button>
       </div>
-      <div class="center">
+      <div class="center" style="color:#fff !important;">
         Propuesta
+      </div>
+       <div class="right" style="color:#fff !important;">
+         <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
       </div>
     </ons-toolbar>
     <div id="leerpropuesta">
@@ -117,12 +162,18 @@
 
 <template id="ranking.html" >
   <ons-page>
-    <ons-toolbar>
-      <div class="left">
+      <ons-toolbar class="root-tool">
+
+      <div class="left" style="color:#fff !important;">
         <ons-back-button></ons-back-button>
       </div>
-      <div class="center">
+      <div class="center" style="color:#fff !important;">
         Ranking
+      </div>
+       <div class="right" style="color:#fff !important;">
+         <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
       </div>
     </ons-toolbar>
     <div id="ranking">
@@ -130,16 +181,20 @@
   </ons-page>
 </template>
 
-
-
 <template id="acount.html" >
   <ons-page>
-    <ons-toolbar>
-      <div class="left">
+      <ons-toolbar class="root-tool">
+
+      <div class="left" style="color:#fff !important;">
         <ons-back-button></ons-back-button>
       </div>
-      <div class="center">
+      <div class="center" style="color:#fff !important;">
         Perfíl
+      </div>
+       <div class="right" style="color:#fff !important;">
+         <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
       </div>
     </ons-toolbar>
     <div id="cuenta">
@@ -149,12 +204,18 @@
 
 <template id="editacount.html" >
   <ons-page>
-    <ons-toolbar>
-      <div class="left">
+      <ons-toolbar class="root-tool">
+
+      <div class="left" style="color:#fff !important;">
         <ons-back-button></ons-back-button>
       </div>
-      <div class="center">
+      <div class="center" style="color:#fff !important;">
         Editar cuenta
+      </div>
+       <div class="right" style="color:#fff !important;">
+         <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
       </div>
     </ons-toolbar>
     <div id="Editar cuenta">
@@ -165,12 +226,18 @@
 
 <template id="transmisionx.html" >
   <ons-page>
-    <ons-toolbar>
-      <div class="left">
+      <ons-toolbar class="root-tool">
+
+      <div class="left" style="color:#fff !important;">
         <ons-back-button></ons-back-button>
       </div>
-      <div class="center">
+      <div class="center" style="color:#fff !important;">
         Transmisión en vivo
+      </div>
+       <div class="right" style="color:#fff !important;">
+         <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
       </div>
     </ons-toolbar>
     <div id="transmisionx">
@@ -178,6 +245,6 @@
   </ons-page>
 </template>
 
-
+</ons-splitter>
 
     

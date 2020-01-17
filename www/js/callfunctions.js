@@ -1,5 +1,11 @@
 var HOST = "http://172.10.200.66:3000";
 
+function OpenMenu(){
+  var menu = document.getElementById('menu');
+  console.log(menu);
+  menu.open();
+};
+
 function GetHome(){
   setTimeout(function(){
     var diputados = HOST+"/api_general/diputados";
@@ -7,12 +13,14 @@ function GetHome(){
     HTPL("diputados",'diputados', diputados);
     data = HOST+"/api_general/transmision";
     HTPL("noticetransmision", 'transmision', data);
-  },5000);
+  },500);
 }
 
 
 function changePage(pushpage){
 document.querySelector('#navigateINDEX').pushPage(pushpage);
+var menu = document.getElementById('menu');
+menu.close();
 }
 
 function LoadProfile(id){
@@ -80,3 +88,28 @@ function sendFormBase(){
   });
 
 }
+
+
+var oldXHR = window.XMLHttpRequest;
+function newXHR() {
+    var realXHR = new oldXHR();
+    realXHR.addEventListener("readystatechange", function() {
+        if(realXHR.readyState==1){
+            $('#progress').attr('value',20);
+        }
+        if(realXHR.readyState==2){
+            $('#progress').attr('value',40);
+        }
+        if(realXHR.readyState==3){
+            $('#progress').attr('value',60);
+        }
+        if(realXHR.readyState==4){
+            $('#progress').attr('value',100);
+            setTimeout(function(){
+              $('#progress').attr('value',0);
+            },1000)
+        }
+    }, false);
+    return realXHR;
+}
+window.XMLHttpRequest = newXHR;

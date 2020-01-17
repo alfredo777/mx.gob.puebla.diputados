@@ -1,20 +1,26 @@
-<ons-card modifier="material modifier2">
+<ons-card modifier="material modifier2 super-card">
+<div class="axdiv-card">
 <center>
+<div class="circle {{partido}}"></div> 
+
 <img src="http://172.10.200.66:3000{{img.medium.url}}" class="circular-img">
+<br/><br/>
 <div class="title">
   <h3>{{nombre}} {{apellido}}</h3>
+  <h4>{{partido}}</h4>
 </div>
 </center>
+</div>
 <div class="content"  style=" background:transparent; margin-top: 30px;">
   <ons-list modifier="inset">
     <ons-list-header>Opcciones</ons-list-header>
-    <ons-list-item modifier="chevron material" onclick="Ranking('{{id}}')">
+    <ons-list-item modifier="chevron material" onclick="Ranking('{{id}}')" tappable>
       <i class="fas fa-chart-line"></i> &nbsp; Ranking
     </ons-list-item>
-    <ons-list-item modifier="chevron material" onclick="Propuestas('{{id}}')">
+    <ons-list-item modifier="chevron material" onclick="Propuestas('{{id}}')" tappable>
       <i class="fas fa-paste"></i> &nbsp; Propuestas
     </ons-list-item>
-    <ons-list-item modifier="chevron material" onclick="Solicitud('{{id}}')">
+    <ons-list-item modifier="chevron material" onclick="Solicitud('{{id}}')" tappable>
       <i class="fas fa-envelope-open-text"></i> &nbsp; Enviar solicitud
     </ons-list-item>
  </ons-list>
