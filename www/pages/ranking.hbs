@@ -1,60 +1,106 @@
+<div class="shadow-box">
+<div class="axdiv-card" style="width:100%; position:relative; float:left;">
+	<div class="pull-left">
+		<center>
+    	<div class="circle-2 {{diputado.partido}}"></div> 
+		<img src="http://172.10.200.66:3000{{diputado.img.medium.url}}" class="circular-img-2">
+		<h4>{{diputado.partido}}</h4>
+		</center>
+    </div>
+	<div class="title pull-left" style="max-width: 70%;">
+	  &nbsp;&nbsp;<h3>{{diputado.nombre}} {{diputado.apellido}}</h3>
+	</div>
+</div>
+</div>
+<div class="pull-left" style="width:100%;">
 <ons-list>
-	<ons-list-header>Propuestas Realizadas</ons-list-header>
+	<center><h3 style="color:#847041;">Propuestas Realizadas</h3></center>
 	<ons-list-item>
+		<div class="left">
+			<h1 style="font-size:40px; color: #989998;">{{propuestas_en_proceso}}</h1>
+		</div>
 		<div class="center">
 			Propuestas en proceso 
 		</div>
 		<div class="right">
-			{{propuestas_en_proceso}} &nbsp;&nbsp;  <i class="fas fa-lightbulb"></i>
+		  <img src="img/icons-app/propuesta_proceso.png" width="35px">
 		</div>
 	</ons-list-item>
+	<hr/>
 	<ons-list-item>
+		<div class="left">
+			<h1 style="font-size:40px; color: #989998;">{{propuestas_aprobadas}}</h1>
+		</div>
 		<div class="center">
 			Propuestas Aprobadas 
 		</div>
 		<div class="right">
-			{{propuestas_aprobadas}} &nbsp;  <i class="fas fa-thumbs-up"></i>
+		  <img src="img/icons-app/propuesta_aprobada.png" width="35px">
 		</div>
 	</ons-list-item>
+	<hr/>
 	<ons-list-item>
+		<div class="left">
+			<h1 style="font-size:40px; color: #989998;">{{propuestas_declinadas}}</h1>
+		</div>
 		<div class="center">
 			Propuestas Declinadas 
 		</div>
 		<div class="right">
-			{{propuestas_declinadas}} &nbsp;  <i class="fas fa-thumbs-down"></i>
+		  <img src="img/icons-app/propuesta_nega.png" width="35px">
 		</div>
 	</ons-list-item>
+	<hr/>
 	<ons-list-item>
+		<div class="left">
+			<h1 style="font-size:40px; color: #989998;">{{propuestas}}</h1>
+		</div>
 		<div class="center">
 			Propuestas ante el congreso 
 		</div>
 		<div class="right">
-			{{propuestas}} &nbsp;  <i class="fas fa-university"></i>
+		  <img src="img/icons-app/propuesta_congre.png" width="35px">
 		</div>
+		
 	</ons-list-item>
-	<ons-list-header>Peticiones Públicas por la App</ons-list-header>
+	<hr/>
+
+	<center><h3 style="color:#847041;">Peticiones Públicas por la App</h3></center>
 	<ons-list-item>
+		<div class="left">
+			<h1 style="font-size:40px; color: #989998;">{{peticiones}}</h1>
+		</div>
 		<div class="center">
 			Peticiones recibidas 
 		</div>
 		<div class="right">
-			{{peticiones}} &nbsp;  <i class="fas fa-fist-raised"></i>
+		  <img src="img/icons-app/propuestas.png" width="35px">
 		</div>
 	</ons-list-item>
+	<hr/>
 	<ons-list-item>
+		<div class="left">
+			<h1 style="font-size:40px; color: #989998;">{{peticiones}}</h1>
+		</div>
 		<div class="center">
 			Peticiones respondidas 
 		</div>
 		<div class="right">
-			{{peticiones}} &nbsp;  <i class="fas fa-heartbeat"></i>
+		  <img src="img/icons-app/respuestas.png" width="35px">
 		</div>
 	</ons-list-item>
+	<hr/>
 	<ons-list-item>
+		<div class="left">
+			<h1 style="font-size:40px; color: #989998;">{{peticiones}}</h1>
+		</div>
 		<div class="center">
 			Peticiones sin respuetas 
 		</div>
 		<div class="right">
-			{{peticiones}} &nbsp;  <i class="fas fa-heart-broken"></i>
+		  <img src="img/icons-app/peticiones.png" width="35px">
 		</div>
 	</ons-list-item>
+	<hr/>
 </ons-list>
+</div>

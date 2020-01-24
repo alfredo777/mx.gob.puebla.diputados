@@ -1,15 +1,36 @@
+<div class="axdiv-card" style="width:98%; position:relative; float:left;">
+	<div class="pull-left">
+		<center>
+    	<div class="circle-2 {{diputado.partido}}"></div> 
+		<img src="http://172.10.200.66:3000{{diputado.img.medium.url}}" class="circular-img-2">
+		<h4>{{diputado.partido}}</h4>
+		</center>
+    </div>
+	<div class="title pull-left" style="max-width: 60%;">
+	  &nbsp;&nbsp;<h3>{{diputado.nombre}} {{diputado.apellido}}</h3>
+	</div>
+</div>
+<div class="pull-left" style="width:100%;">
+
 <ons-list>
-
 	<ons-list-item modifier="material" >
-	<center><h2>Propuestas presentadas {{propuestas.length}}</h2></center>
+	<div class="left">
+		<h1 style="font-size:40px; color: #989998;">3{{propuestas.length}}</h1> &nbsp;<img src="img/icons-app/filtros.png" width="25px">
+
+	</div>
+	<div class="center">
+	<center><h3 style="color:#847041;">&nbsp; Propuestas presentadas </h3></center>
+    </div>
     </ons-list-item>
-
 	{{#each propuestas}}
-
 	<ons-list-item modifier="chevron material" onclick="Propuesta({{id}})" tappable>
-		<div class="left"><center><h2>{{inc @index}}</h2></center></div>
-		<div class="center"><span class="list-item__title">{{titulo}}</span>
-		<span class="list-item__subtitle">{{fecha}} - {{estatus}}</span></div>
+		<div class="left"><center><h2>{{inc @index}}</h2></center><div class="circle-3 {{estatus}}"></div></div>
+		<div class="center">
+		    <span class="list-item__title">{{titulo}}</span>
+			<span class="list-item__subtitle">{{fecha}} - {{estatus}}</span>
+	    </div>
 	</ons-list-item>
 	{{/each}}
 </ons-list>
+
+</div>

@@ -1,0 +1,78 @@
+<ons-carousel fullscreen swipeable auto-scroll overscrollable id="carousel">
+<ons-carousel-item style="background-color: #085078; height: 100vh;">
+<div style="text-align: center; font-size: 30px; margin-top: 120px; color: #fff;">
+  BLUE
+</div>
+</ons-carousel-item>
+<ons-carousel-item style="background-color: #373B44;  height: 100vh;">
+<div style="text-align: center; font-size: 30px; margin-top: 120px; color: #fff;">
+  DARK
+</div>
+</ons-carousel-item>
+<ons-carousel-item style="background-color: #D38312;  height: 100vh;">
+<div style="text-align: center; font-size: 30px; margin-top: 120px; color: #fff;">
+  ORANGE
+</div>
+</ons-carousel-item>
+</ons-carousel-item>
+<ons-carousel-item style="background-color: #D38312;  height: 100vh;">
+<div style="text-align: center; font-size: 30px; margin-top: 120px; color: #fff;">
+  ORANGE 2
+</div>
+</ons-carousel-item>
+</ons-carousel-item>
+<ons-carousel-item style="background-color: #fff;  height: 100vh; colorw">
+<div style="text-align: center; font-size: 30px; margin-top: 10px; color: #fff;">
+  <div style="text-align: center; margin-top: 30px;">
+    <center>
+      <img src="img/icons-app/user.png" width="150px">
+      <h2 style="color:#847041;">CREA TU USUARIO</h2>
+    </center>
+    <p>
+      <ons-input id="nombre" modifier="underbar" placeholder="Nombre *" float></ons-input>
+    </p>
+    <p>
+      <ons-input id="apellidos" modifier="underbar" placeholder="Apellidos" float></ons-input>
+    </p>
+    <p>
+      <ons-input id="email" modifier="underbar" placeholder="Correo Electrónico" float></ons-input>
+    </p>
+    <p>
+      <ons-input id="cp" modifier="underbar" placeholder="Código Postal" float></ons-input>
+    </p>
+    <p>
+      <ons-input id="municipio" modifier="underbar" placeholder="Municipio" float></ons-input>
+    </p>
+    <p>
+      <ons-input id="seccionel" modifier="underbar" placeholder="Sección Electoral" float></ons-input>
+    </p>
+    <p style="margin-top: 30px;">
+      <center>
+      <ons-speed-dial position="bottom center" onclick="loginINC()">
+      <ons-fab>
+      <center>
+      <img src="img/icons-app/arrow.png" width="56px">
+      </center>
+      </ons-fab>
+      </ons-button>
+      </center>
+    </p>
+  </div>
+</div>
+</ons-carousel-item>
+</ons-carousel>
+<script type="text/javascript">
+var prev = function() {
+var carousel = document.getElementById('carousel');
+carousel.prev();
+};
+var next = function() {
+var carousel = document.getElementById('carousel');
+carousel.next();
+};
+ons.ready(function() {
+var carousel = document.addEventListener('postchange', function(event) {
+console.log('Changed to ' + event.activeIndex)
+});
+});
+</script>

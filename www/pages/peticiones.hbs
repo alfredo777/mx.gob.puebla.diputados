@@ -1,0 +1,8 @@
+<ons-list >
+	{{#each peticiones}}
+	<ons-list-item modifier="chevron material" onclick="Peticion({{id}})" tappable>
+		<div class="center"><span class="list-item__title">{{nombres}} {{apellidos}}</span>
+		<span class="list-item__subtitle">{{created_at}}</span></div>
+	</ons-list-item>
+	{{/each}}
+</ons-list>

@@ -11,22 +11,36 @@
 </div>
 </center>
 </div>
-<div class="content"  style=" background:transparent; margin-top: 30px;">
-  <ons-list modifier="inset">
-    <ons-list-header>Opcciones</ons-list-header>
-    <ons-list-item modifier="chevron material" onclick="Ranking('{{id}}')" tappable>
+<div class="content"  style="background:transparent; margin-top: 10px; border: no-border;">
+  <ons-list>
+    <ons-list-item modifier="material" onclick="Ranking('{{id}}')" tappable>
+      <div class="center">
       <i class="fas fa-chart-line"></i> &nbsp; Ranking
+      </div>
+      <div class="right">
+        <img src="img/icons-app/arrow.png" width="35px">
+      </div>
     </ons-list-item>
-    <ons-list-item modifier="chevron material" onclick="Propuestas('{{id}}')" tappable>
+    <ons-list-item modifier="material" onclick="Propuestas('{{id}}')" tappable>
+      <div class="center">
       <i class="fas fa-paste"></i> &nbsp; Propuestas
+      </div>
+      <div class="right">
+        <img src="img/icons-app/arrow.png" width="35px">
+      </div>
     </ons-list-item>
-    <ons-list-item modifier="chevron material" onclick="Solicitud('{{id}}')" tappable>
+    <ons-list-item modifier="material" onclick="Solicitud('{{id}}')" tappable>
+      <div class="center">
       <i class="fas fa-envelope-open-text"></i> &nbsp; Enviar solicitud
+      </div>
+      <div class="right">
+        <img src="img/icons-app/arrow.png" width="35px">
+      </div>
     </ons-list-item>
  </ons-list>
 </div> 
-<div class="content"  style=" background:transparent; margin-top: 30px;">
-  <ons-list modifier="inset">
+<div class="content axdiv-card"  style=" background:transparent; margin-top: 30px;">
+  <ons-list class="axdiv-card">
   <ons-list-header>Información</ons-list-header>
   <ons-list-item>Partido: {{partido}}</ons-list-item>
   <ons-list-item>Distrito: {{distrito}}</ons-list-item>

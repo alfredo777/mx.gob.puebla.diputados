@@ -57,7 +57,18 @@
     <script type="text/javascript" src="cordova.js"></script>
 
     <script type="text/javascript">
-        GetHome();
+        var user = window.localStorage.getItem("user");
+
+        if(user == "null"){
+           GetIntro();
+        } else {
+           GetHome();
+           var name = window.localStorage.getItem("name");
+           setTimeout(function(){
+            $('#myname').html(name);
+           },1100);
+        }
+       
     </script>
 
 </body>

@@ -8,6 +8,22 @@
 
 }
 
+.circular-img-2{
+	width: 100px;
+	height: 100px;
+	border: solid #bd8e2e 0px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+
+}
+
+.pull-left{
+	width: auto;
+	position: relative;
+	float: left;
+}
+
 .justify-text{
 	text-align: justify;
 }
@@ -25,6 +41,45 @@
 
 }
 
+.circle-2{
+	width: 20px;
+	height: 20px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	margin-top: 80px;
+    margin-left: 68%;
+	z-index: 99999;
+	position: absolute;
+}
+
+
+.circle-3{
+	width: 10px;
+	height: 10px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	z-index: 99999;
+	position: relative;
+	float: left;
+	margin-left: 10px;
+}
+
+.Aprobada{
+	background: #196f07;
+}
+.Declinada{
+	background: #c14b2f;
+}
+.Presentandose{
+	background: #cabe18;
+}
+.shadow-box{
+	box-shadow: 0px -7px 28px 2px rgba(0,0,0,0.89) inset;
+   -webkit-box-shadow: 0px -7px 28px 2px rgba(0,0,0,0.89) inset;
+   -moz-box-shadow: 0px -7px 28px 2px rgba(0,0,0,0.89) inset;
+}
 .MORENA {
 	background: rgba(194,31,58,1);
 }

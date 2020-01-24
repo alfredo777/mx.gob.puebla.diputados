@@ -1,9 +1,24 @@
-<div style="height: 400px; padding: 1px 0 0 0; oveflow:auto; text-align:justify;">
-  <div class="card">
-    <h2 class="card__title">{{titulo}}</h2>
-    <p>Propuesta para {{fecha}}</p>
-
-    <a href="http://172.10.200.66:3000{{documento.url}}" target="_url">Ver Documento <i class="fas fa-file-pdf"></i></a><br/>
-    <div class="card__content"><br/>{{propuesta}}</div><br/>
-  </div>
+<div class="axdiv-card" style="width:98%; position:relative; float:left;">
+	<div class="pull-left">
+		<center>
+		<div class="circle-2 {{diputado.partido}}"></div>
+		<img src="http://172.10.200.66:3000{{diputado.img.medium.url}}" class="circular-img-2">
+		<h4>{{diputado.partido}}</h4>
+		</center>
+	</div>
+	<div class="title pull-left" style="max-width: 60%;">
+		&nbsp;&nbsp;<h3>{{diputado.nombre}} {{diputado.apellido}}</h3>
+	</div>
+</div>
+<div class="pull-left" style="width:100%;">
+	<div style="height: 400px; oveflow:auto; text-align:justify; padding 10px;">
+		<div class="card">
+			<center>
+			<h2 class="card__title" style="color:#847041;">{{propuesta.titulo}}</h2>
+			<p>Propuesta para {{propuesta.fecha}}</p>
+			<div class="card__content"><br/>{{propuesta.propuesta}}</div><br/>
+			<a href="http://172.10.200.66:3000{{propuesta.documento.url}}" target="_url" class="button">Ver Documento <i class="fas fa-file-pdf"></i></a><br/><br/><br/>
+			</center>
+		</div>
+	</div>
 </div>

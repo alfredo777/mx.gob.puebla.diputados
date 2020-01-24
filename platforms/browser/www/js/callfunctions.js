@@ -1,10 +1,109 @@
 var HOST = "http://172.10.200.66:3000";
 
+
+var oldXHR = window.XMLHttpRequest;
+function newXHR() {
+    var realXHR = new oldXHR();
+    realXHR.addEventListener("readystatechange", function() {
+        if(realXHR.readyState==1){
+            $('#progress').attr('value',20);
+        }
+        if(realXHR.readyState==2){
+            $('#progress').attr('value',40);
+        }
+        if(realXHR.readyState==3){
+            $('#progress').attr('value',60);
+        }
+        if(realXHR.readyState==4){
+            $('#progress').attr('value',100);
+            setTimeout(function(){
+              $('#progress').attr('value',0);
+            },1000)
+        }
+    }, false);
+    return realXHR;
+}
+window.XMLHttpRequest = newXHR;
+
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function loginINC(){
+  console.log('Extract Phone Data');
+
+  var nombre = $('#nombre').val();
+  var apellidos = $('#apellidos').val();
+  var email = $('#email').val();
+  var cp = $('#cp').val();
+  var municipio = $('#municipio').val();
+  var seccionel = $('#seccionel').val();
+  var data_phone = {
+      'nombre': nombre,
+      'apellidos': apellidos,
+      'email': email,
+      'cp': cp,
+      'municipio': municipio,
+      'seccionel': seccionel,
+      'devicemodel': device.model,
+      'devicename': device.manufacturer,
+      'deviceplatform': device.platform,
+      'deviceuuid': device.uuid,
+      'deviceversion': device.version,
+      'virtual': device.isVirtual,
+      'serial': device.serial
+   }
+
+    console.log(JSON.stringify(data_phone));
+
+
+    fetch(HOST+'/api_general/register_user', {
+     method: 'POST',
+     body: JSON.stringify(data_phone),
+     headers:{
+        'Content-Type': 'application/json'
+     }
+    })
+    .then(function(response) {
+      return response.json()
+    })
+    .then(function(json) {
+       console.log(json);
+       alert(json.respuesta);
+       window.localStorage.setItem("user", json.id);
+       window.localStorage.setItem("email", json.email);
+       window.localStorage.setItem("name", json.name);
+       var name = window.localStorage.getItem("name");
+       $('#myname').html(name);
+       GetHome();
+
+    })
+    .catch(function(err) {
+        console.warn(err);
+        return false;
+        alert('Gracias por ingresar la información pronto le daremos respuesta.');
+        GetHome();
+    });
+
+}
+
 function OpenMenu(){
   var menu = document.getElementById('menu');
   console.log(menu);
   menu.open();
 };
+
+function CloseSESSion(){
+  window.localStorage.setItem("user", "null");
+  window.localStorage.setItem("email", "null");
+  window.localStorage.setItem("name", "null");
+  window.location.reload();
+
+}
+
+function GetIntro(){
+   LoadHTML('./pages/intro.html', 'app');
+   LoadHTML('./pages/tutorial.html','tutorial');
+}
 
 function GetHome(){
   setTimeout(function(){
@@ -13,7 +112,7 @@ function GetHome(){
     HTPL("diputados",'diputados', diputados);
     data = HOST+"/api_general/transmision";
     HTPL("noticetransmision", 'transmision', data);
-  },500);
+  },200);
 }
 
 
@@ -33,8 +132,10 @@ HTPL("perfil", 'perfil', data);
 function Solicitud(id){
   changePage('solicitud.html');
   HTPL("form_peticion", 'solicitud', "./data/form_peticion.json");
+  var user_id = window.localStorage.getItem("user");
   setTimeout(function(){
      document.getElementById('form-action-base-id').innerHTML = "<input type='text' id='diputado_id' name='id' style='display:none;' value="+"'"+id+"'"+"></input>";
+     document.getElementById('form-action-user-id').innerHTML = "<input type='text' id='user_id' name='user_id' style='display:none;' value="+"'"+user_id+"'"+"></input>";
   },1000);
 }
 
@@ -76,40 +177,46 @@ function sendFormBase(){
   })
   .then(function(json) {
      console.log(json);
-     alert('Gracias por ingresar la información pronto le daremos respuesta.');
-     GetHome();
+     alert(json.notice);
+     Peticion(json.registro);
+     /*GetHome();*/
 
   })
   .catch(function(err) {
       console.warn(err);
       return false;
       alert('Gracias por ingresar la información pronto le daremos respuesta.');
-      GetHome();
+     /*GetHome();*/
   });
 
 }
 
+function Peticion(id){
+  changePage('peticion.html');
+  data = HOST+"/api_general/peticion?id="+id;
+  HTPL("peticion", 'peticionxgt', data);
 
-var oldXHR = window.XMLHttpRequest;
-function newXHR() {
-    var realXHR = new oldXHR();
-    realXHR.addEventListener("readystatechange", function() {
-        if(realXHR.readyState==1){
-            $('#progress').attr('value',20);
-        }
-        if(realXHR.readyState==2){
-            $('#progress').attr('value',40);
-        }
-        if(realXHR.readyState==3){
-            $('#progress').attr('value',60);
-        }
-        if(realXHR.readyState==4){
-            $('#progress').attr('value',100);
-            setTimeout(function(){
-              $('#progress').attr('value',0);
-            },1000)
-        }
-    }, false);
-    return realXHR;
 }
-window.XMLHttpRequest = newXHR;
+
+function Peticiones(id){
+  GetHome();
+  setTimeout(function(){
+  changePage('peticiones.html');
+  data = HOST+"/api_general/peticiones?id="+id;
+  console.log(JSON.stringify(data));
+  HTPL("peticiones", 'peticionesxgt', data);
+  },700);
+}
+
+function Privacidad(){
+  changePage('privacidad.html');
+  LoadHTML('./pages/privacidad.html','privacidadxgt');
+}
+
+function AyudaSoporte(){
+  changePage('soporte.html');
+  LoadHTML('./pages/soporte.html','soportexgt');
+}
+
+
+
