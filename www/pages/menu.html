@@ -13,7 +13,7 @@
           <ons-list-item style="color:#fff;" onclick="GetHome();" tappable>
             Mi cuenta &nbsp;  <div id="myname"></div>
           </ons-list-item>
-          <ons-list-item style="color:#fff;" onclick="changePage('mypetitions.html');" tappable>
+          <ons-list-item style="color:#fff;" onclick="DipFinder();" tappable>
             <h3>Conoce a tu diputado</h3><br/>
             <p>y enviale una solicitud.</p>
           </ons-list-item>
@@ -289,6 +289,25 @@
       </div>
     </ons-toolbar>
     <div id="peticionesxgt"></div>
+  </ons-page>
+</template>
+
+<template id="findedip.html" >
+  <ons-page>
+      <ons-toolbar class="root-tool">
+      <div class="left" style="color:#fff !important;">
+        <ons-back-button> <img src="img/icons-app/arrow_line.png" width="20px" style="margin-top:10px; margin-left: 10px;"> </ons-back-button>
+      </div>
+      <div class="center" style="color:#fff !important;">
+        <center>Encontrar Diputados</center>
+      </div>
+       <div class="right" style="color:#fff !important;">
+         <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
+          <img src="img/icons-app/burguer.png" width="40px" style="margin-top:5px;">
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+    <div id="findedipxgt"></div>
   </ons-page>
 </template>
 

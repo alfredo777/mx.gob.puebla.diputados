@@ -56,7 +56,26 @@ function loginINC(){
     console.log(JSON.stringify(data_phone));
 
 
-    fetch(HOST+'/api_general/register_user', {
+    $.ajax({
+        url: HOST+'/api_general/register_user',
+        type: 'post',
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function (json) {
+             console.log(json);
+             alert(json.respuesta);
+             window.localStorage.setItem("user", json.id);
+             window.localStorage.setItem("email", json.email);
+             window.localStorage.setItem("name", json.name);
+             window.localStorage.setItem("municipio", json.municipio);
+             var name = window.localStorage.getItem("name");
+             $('#myname').html(name);
+             GetHome();
+        },
+        data: JSON.stringify(data_phone)
+    });
+
+    /*fetch(HOST+'/api_general/register_user', {
      method: 'POST',
      body: JSON.stringify(data_phone),
      headers:{
@@ -82,13 +101,15 @@ function loginINC(){
         return false;
         alert('Gracias por ingresar la información pronto le daremos respuesta.');
         GetHome();
-    });
+    });*/
 
 }
 
 function OpenMenu(){
   var menu = document.getElementById('menu');
   console.log(menu);
+  var name = window.localStorage.getItem("name");
+  $('#myname').html(name);
   menu.open();
 };
 
@@ -113,6 +134,9 @@ function GetHome(){
     data = HOST+"/api_general/transmision";
     HTPL("noticetransmision", 'transmision', data);
   },200);
+
+  var name = window.localStorage.getItem("name");
+  $('#myname').html(name);
 }
 
 
@@ -166,28 +190,26 @@ function GetTrasmision(fecha){
 }
 
 function sendFormBase(){
-  var data = new FormData(document.getElementById('form-action-base'));
-  console.log(data);
-  fetch(HOST+'/api_general/gestion', {
-     method: 'POST',
-     body: data
-  })
-  .then(function(response) {
-    return response.json()
-  })
-  .then(function(json) {
-     console.log(json);
-     alert(json.notice);
-     Peticion(json.registro);
-     /*GetHome();*/
 
-  })
-  .catch(function(err) {
-      console.warn(err);
-      return false;
-      alert('Gracias por ingresar la información pronto le daremos respuesta.');
-     /*GetHome();*/
+  var formData = new FormData($("#form-action-base")[0]);
+  console.log(formData);
+
+  $.ajax({
+    url: HOST+'/api_general/gestion',
+    type: 'post',
+    data: formData,
+    processData: false,
+    contentType: false,
+    success: function (json) {
+       console.log(json);
+       alert(json.notice);
+       Peticion(json.registro);
+    },
+    error: function(error) {
+      alert(error);
+    }
   });
+  
 
 }
 
@@ -206,6 +228,15 @@ function Peticiones(id){
   console.log(JSON.stringify(data));
   HTPL("peticiones", 'peticionesxgt', data);
   },700);
+}
+
+function DipFinder(){
+  var numerodistrito = window.localStorage.getItem("municipio");
+  changePage('findedip.html');
+  data = HOST+"/api_general/search_diputado?numerodistrito="+numerodistrito;
+  console.log(data);
+  HTPL("findedip", 'findedipxgt', data);
+
 }
 
 function Privacidad(){
