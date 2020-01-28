@@ -176,6 +176,7 @@ function sendFormBase(){
     data: formData,
     processData: false,
     contentType: false,
+    type: 'POST',
     success: function (json) {
        console.log(json);
        alert(json.notice);
