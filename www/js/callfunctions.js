@@ -58,7 +58,7 @@ function loginINC(){
 
     $.ajax({
         url: HOST+'/api_general/register_user',
-        type: 'GET',
+        cache: true,
         dataType: 'json',
         contentType: 'application/json',
         success: function (json) {
@@ -196,7 +196,7 @@ function sendFormBase(){
 
   $.ajax({
     url: HOST+'/api_general/gestion',
-    type: 'GET',
+    cache: true,
     data: formData,
     processData: false,
     contentType: false,
