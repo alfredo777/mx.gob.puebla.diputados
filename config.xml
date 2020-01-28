@@ -20,9 +20,7 @@
     <plugin name="cordova-plugin-console" source="npm" spec="~1.0.3" />
     <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.1" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-    <plugin name="cordova-plugin-splashscreen" spec="^5.0.3" />
-
-    <preference name="orientation" value="portrait" />    
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.3" />  
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
@@ -109,5 +107,7 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     
-
+    <preference name="orientation" value="portrait" />
+    <preference name="fullscreen" value="true" />  
+    <preference name="SplashScreenDelay" value="10000" />
 </widget>
