@@ -37,7 +37,7 @@ function loginINC(){
     $.ajax({
         url: HOST+'/api_general/register_user',
         cache: true,
-        data: formData,
+        data: JSON.stringify(formData),
         processData: false,
         contentType: false,
         success: function (json) {
@@ -73,6 +73,9 @@ function CloseSESSion(){
   window.localStorage.setItem("email", "null");
   window.localStorage.setItem("name", "null");
   window.location.reload();
+  setTimeout(function(){
+    GetIntro();
+  },200)
 
 }
 
@@ -152,7 +155,7 @@ function sendFormBase(){
   $.ajax({
     url: HOST+'/api_general/gestion',
     cache: true,
-    data: formData,
+    data: JSON.stringify(formData),
     processData: false,
     contentType: false,
     success: function (json) {
