@@ -28,8 +28,18 @@ window.XMLHttpRequest = newXHR;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
+/*
+      'devicemodel': device.model,
+      'devicename': device.manufacturer,
+      'deviceplatform': device.platform,
+      'deviceuuid': device.uuid,
+      'deviceversion': device.version,
+      'virtual': device.isVirtual,
+      'serial': device.serial
+*/   
+
 function loginINC(){
-  alert(device.model);
+ 
   var nombre = $('#nombre').val();
   var apellidos = $('#apellidos').val();
   var email = $('#email').val();
@@ -44,15 +54,8 @@ function loginINC(){
       'email': email,
       'cp': cp,
       'municipio': municipio,
-      'seccionel': seccionel,
-      'devicemodel': device.model,
-      'devicename': device.manufacturer,
-      'deviceplatform': device.platform,
-      'deviceuuid': device.uuid,
-      'deviceversion': device.version,
-      'virtual': device.isVirtual,
-      'serial': device.serial
-   }
+      'seccionel': seccionel
+    } 
 
 
     $.ajax({
