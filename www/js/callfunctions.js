@@ -30,17 +30,16 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function loginINC(){
   console.log('Extract Phone Data');
-  alert('Enviando Formulario');
 
-  
    var formData = new FormData($("#form-action-register")[0]);
    console.log(formData);
 
     $.ajax({
         url: HOST+'/api_general/register_user',
         cache: true,
-        dataType: 'json',
-        contentType: 'application/json',
+        data: formData,
+        processData: false,
+        contentType: false,
         success: function (json) {
              console.log(json);
              alert(json.respuesta);
@@ -52,7 +51,10 @@ function loginINC(){
              $('#myname').html(name);
              GetHome();
         },
-        data: data_phone
+        error: function(error) {
+          alert(error);
+        }
+        
     });
 
 
