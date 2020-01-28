@@ -32,29 +32,9 @@ function loginINC(){
   console.log('Extract Phone Data');
   alert('Enviando Formulario');
 
-  var nombre = $('#nombre').val();
-  var apellidos = $('#apellidos').val();
-  var email = $('#email').val();
-  var cp = $('#cp').val();
-  var municipio = $('#municipio').val();
-  var seccionel = $('#seccionel').val();
-  var data_phone = {
-      'nombre': nombre,
-      'apellidos': apellidos,
-      'email': email,
-      'cp': cp,
-      'municipio': municipio,
-      'seccionel': seccionel,
-      'devicemodel': device.model,
-      'devicename': device.manufacturer,
-      'deviceplatform': device.platform,
-      'deviceuuid': device.uuid,
-      'deviceversion': device.version,
-      'virtual': device.isVirtual,
-      'serial': device.serial
-   }
-
-   alert(data_phone);
+  
+   var formData = new FormData($("#form-action-register")[0]);
+   console.log(formData);
 
     $.ajax({
         url: HOST+'/api_general/register_user',
