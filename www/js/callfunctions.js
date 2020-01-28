@@ -30,6 +30,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function loginINC(){
   console.log('Extract Phone Data');
+  alert('Enviando Formulario');
 
   var nombre = $('#nombre').val();
   var apellidos = $('#apellidos').val();
@@ -53,8 +54,7 @@ function loginINC(){
       'serial': device.serial
    }
 
-    console.log(JSON.stringify(data_phone));
-
+   alert(data_phone);
 
     $.ajax({
         url: HOST+'/api_general/register_user',
@@ -72,36 +72,9 @@ function loginINC(){
              $('#myname').html(name);
              GetHome();
         },
-        data: JSON.stringify(data_phone)
+        data: data_phone
     });
 
-    /*fetch(HOST+'/api_general/register_user', {
-     method: 'POST',
-     body: JSON.stringify(data_phone),
-     headers:{
-        'Content-Type': 'application/json'
-     }
-    })
-    .then(function(response) {
-      return response.json()
-    })
-    .then(function(json) {
-       console.log(json);
-       alert(json.respuesta);
-       window.localStorage.setItem("user", json.id);
-       window.localStorage.setItem("email", json.email);
-       window.localStorage.setItem("name", json.name);
-       var name = window.localStorage.getItem("name");
-       $('#myname').html(name);
-       GetHome();
-
-    })
-    .catch(function(err) {
-        console.warn(err);
-        return false;
-        alert('Gracias por ingresar la información pronto le daremos respuesta.');
-        GetHome();
-    });*/
 
 }
 
