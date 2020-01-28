@@ -29,7 +29,7 @@ window.XMLHttpRequest = newXHR;
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function loginINC(){
-
+  alert(device.model);
   var nombre = $('#nombre').val();
   var apellidos = $('#apellidos').val();
   var email = $('#email').val();
@@ -92,7 +92,7 @@ function CloseSESSion(){
   window.localStorage.setItem("user", "null");
   window.localStorage.setItem("email", "null");
   window.localStorage.setItem("name", "null");
-  window.location.reload();
+  GetIntro();
 
 }
 
