@@ -28,18 +28,16 @@ window.XMLHttpRequest = newXHR;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
-/*
-      'devicemodel': device.model,
+/*'devicemodel': device.model,
       'devicename': device.manufacturer,
       'deviceplatform': device.platform,
       'deviceuuid': device.uuid,
       'deviceversion': device.version,
       'virtual': device.isVirtual,
-      'serial': device.serial
-*/   
+      'serial': device.serial*/
 
 function loginINC(){
- 
+
   var nombre = $('#nombre').val();
   var apellidos = $('#apellidos').val();
   var email = $('#email').val();
@@ -54,16 +52,16 @@ function loginINC(){
       'email': email,
       'cp': cp,
       'municipio': municipio,
-      'seccionel': seccionel
-    } 
+      'seccionel': seccionel    
+  }
 
 
     $.ajax({
         url: HOST+'/api_general/register_user',
         cache: true,
         data: data,
-        processData: false,
-        contentType: false,
+        dataType: 'json',
+        contentType: 'application/json',
         success: function (json) {
              console.log(json);
              alert(json.respuesta);
@@ -95,7 +93,7 @@ function CloseSESSion(){
   window.localStorage.setItem("user", "null");
   window.localStorage.setItem("email", "null");
   window.localStorage.setItem("name", "null");
-  GetIntro();
+  window.location.reload();
 
 }
 
