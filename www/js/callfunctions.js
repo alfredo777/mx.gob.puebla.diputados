@@ -94,7 +94,9 @@ function CloseSESSion(){
   window.localStorage.setItem("email", "null");
   window.localStorage.setItem("name", "null");
   window.location.reload();
-
+  setTimeout(function(){
+   GetIntro();
+  },1000);
 }
 
 function GetIntro(){
@@ -180,7 +182,9 @@ function sendFormBase(){
     success: function (json) {
        console.log(json);
        alert(json.notice);
+       if(json.registro != 0){
        Peticion(json.registro);
+       }
     },
     error: function(error) {
       alert(error);
