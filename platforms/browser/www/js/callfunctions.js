@@ -103,7 +103,7 @@ function GetIntro(){
    LoadHTML('./pages/intro.hbs', 'app');
    setTimeout(function(){
    LoadHTMLPC('./pages/tutorial.hbs','.page__content div#tutorialxfg');
-   },1000);
+   },100);
 }
 
 function GetHome(){

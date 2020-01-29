@@ -58,19 +58,21 @@
     <script type="text/javascript" src="cordova.js"></script>
 
     <script type="text/javascript">
-    setTimeout(function(){
+    $(document).ready(function(){
         var user = window.localStorage.getItem("user");
 
         if(user == "null" || user == null){
+           alert('Get Intro');
            GetIntro();
         } else {
+           alert('Get Home');
            GetHome();
            var name = window.localStorage.getItem("name");
            setTimeout(function(){
             $('#myname').html(name);
            },1100);
         }
-    },1000);
+    });
     </script>
 
 </body>
