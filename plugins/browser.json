@@ -22,9 +22,6 @@
     "phonegap-plugin-push": {
       "SENDER_ID": "XXXXXXX",
       "PACKAGE_NAME": "mx.gob.congresopuebla.diputados"
-    },
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "mx.gob.congresopuebla.diputados"
     }
   },
   "dependent_plugins": {}

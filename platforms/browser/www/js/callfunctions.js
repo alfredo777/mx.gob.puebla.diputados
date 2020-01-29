@@ -28,8 +28,15 @@ window.XMLHttpRequest = newXHR;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
+/*'devicemodel': device.model,
+      'devicename': device.manufacturer,
+      'deviceplatform': device.platform,
+      'deviceuuid': device.uuid,
+      'deviceversion': device.version,
+      'virtual': device.isVirtual,
+      'serial': device.serial*/
+
 function loginINC(){
-  console.log('Extract Phone Data');
 
   var nombre = $('#nombre').val();
   var apellidos = $('#apellidos').val();
@@ -37,28 +44,22 @@ function loginINC(){
   var cp = $('#cp').val();
   var municipio = $('#municipio').val();
   var seccionel = $('#seccionel').val();
-  var data_phone = {
+
+
+  var data = {
       'nombre': nombre,
       'apellidos': apellidos,
       'email': email,
       'cp': cp,
       'municipio': municipio,
-      'seccionel': seccionel,
-      'devicemodel': device.model,
-      'devicename': device.manufacturer,
-      'deviceplatform': device.platform,
-      'deviceuuid': device.uuid,
-      'deviceversion': device.version,
-      'virtual': device.isVirtual,
-      'serial': device.serial
-   }
-
-    console.log(JSON.stringify(data_phone));
+      'seccionel': seccionel    
+  }
 
 
     $.ajax({
         url: HOST+'/api_general/register_user',
-        type: 'post',
+        cache: true,
+        data: data,
         dataType: 'json',
         contentType: 'application/json',
         success: function (json) {
@@ -72,36 +73,11 @@ function loginINC(){
              $('#myname').html(name);
              GetHome();
         },
-        data: JSON.stringify(data_phone)
+        error: function(error) {
+          alert(error);
+        }
     });
 
-    /*fetch(HOST+'/api_general/register_user', {
-     method: 'POST',
-     body: JSON.stringify(data_phone),
-     headers:{
-        'Content-Type': 'application/json'
-     }
-    })
-    .then(function(response) {
-      return response.json()
-    })
-    .then(function(json) {
-       console.log(json);
-       alert(json.respuesta);
-       window.localStorage.setItem("user", json.id);
-       window.localStorage.setItem("email", json.email);
-       window.localStorage.setItem("name", json.name);
-       var name = window.localStorage.getItem("name");
-       $('#myname').html(name);
-       GetHome();
-
-    })
-    .catch(function(err) {
-        console.warn(err);
-        return false;
-        alert('Gracias por ingresar la información pronto le daremos respuesta.');
-        GetHome();
-    });*/
 
 }
 
@@ -118,7 +94,9 @@ function CloseSESSion(){
   window.localStorage.setItem("email", "null");
   window.localStorage.setItem("name", "null");
   window.location.reload();
-
+  setTimeout(function(){
+   GetIntro();
+  },1000);
 }
 
 function GetIntro(){
@@ -196,14 +174,17 @@ function sendFormBase(){
 
   $.ajax({
     url: HOST+'/api_general/gestion',
-    type: 'post',
+    cache: true,
     data: formData,
     processData: false,
     contentType: false,
+    type: 'POST',
     success: function (json) {
        console.log(json);
        alert(json.notice);
+       if(json.registro != 0){
        Peticion(json.registro);
+       }
     },
     error: function(error) {
       alert(error);

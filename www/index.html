@@ -35,8 +35,8 @@
         * Enable inline JS: add 'unsafe-inline' to default-src
         * Enable eval(): add 'unsafe-eval' to default-src
     * Create your own at http://cspisawesome.com
-    -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
     <link rel="stylesheet" href="css/onsenui.css">
     <link rel="stylesheet" href="css/onsen-css-components.min.css">
@@ -44,19 +44,20 @@
     <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="css/animate.css">    
 
-    <title>Hello World</title>
+    <title>H. Congreso del Estado de Puebla</title>
 </head>
 
 <body>
     <div class="app" id="app">
+      <center>  <button onclick="GetIntro();">CARGARGAR DE NUEVO</button> </center>
     </div>
     <script type="text/javascript" src="js/bundle.js"></script>
     <script type="text/javascript" src="js/hbhelpers.js"></script>
     <script type="text/javascript" src="js/callfunctions.js"></script>
 
-    <script type="text/javascript" src="cordova.js"></script>
-
+ 
     <script type="text/javascript">
+
         var user = window.localStorage.getItem("user");
 
         if(user == "null" || user == null){
