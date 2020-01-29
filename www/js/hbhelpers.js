@@ -3,7 +3,30 @@ function LoadHTML(url, id){
   url: url,
   cache: true,
   success: function(data) {
-   $("#"+id).html(data);
+  result = {}
+  var tpl = Handlebars.compile(data)
+  output = tpl(result);
+  console.log(output);
+   $("#"+id).html(tpl);
+  },
+  error: function(err) {
+    erx = JSON.stringify(err);
+    console.log(erx);
+  }
+});
+}
+
+
+function LoadHTMLPC(url, id){
+ $.ajax({
+  url: url,
+  cache: true,
+  success: function(data) {
+  result = {}
+  var tpl = Handlebars.compile(data)
+  output = tpl(result);
+  console.log(output);
+   $(id).html(tpl);
   },
   error: function(err) {
     erx = JSON.stringify(err);

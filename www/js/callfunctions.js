@@ -26,9 +26,9 @@ function newXHR() {
 window.XMLHttpRequest = newXHR;
 
 
-document.addEventListener("deviceready", onDeviceReady, false);
 
-/*'devicemodel': device.model,
+/*document.addEventListener("deviceready", onDeviceReady, false);
+'devicemodel': device.model,
       'devicename': device.manufacturer,
       'deviceplatform': device.platform,
       'deviceuuid': device.uuid,
@@ -100,14 +100,16 @@ function CloseSESSion(){
 }
 
 function GetIntro(){
-   LoadHTML('./pages/intro.html', 'app');
-   LoadHTML('./pages/tutorial.html','tutorial');
+   LoadHTML('./pages/intro.hbs', 'app');
+   setTimeout(function(){
+   LoadHTMLPC('./pages/tutorial.hbs','.page__content div#tutorialxfg');
+   },1000);
 }
 
 function GetHome(){
   setTimeout(function(){
     var diputados = HOST+"/api_general/diputados";
-    LoadHTML('./pages/menu.html', 'app');
+    LoadHTML('./pages/menu.hbs', 'app');
     HTPL("diputados",'diputados', diputados);
     data = HOST+"/api_general/transmision";
     HTPL("noticetransmision", 'transmision', data);
