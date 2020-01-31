@@ -4,7 +4,7 @@
 {{#each nextorder.propuestas}}
 <ons-list-item modifier="longdivider" expandable><div class="left">{{index}}</div> <div class="center">{{titulo}}</div>
 <div class="expandable-content">{{propuesta}} <br/>
-	<a href="https://www.congresopuebla.app{{archivo.url}}" target="_url">Ver Documento <i class="fas fa-file-pdf"></i></a><br/>
+	<a href="{{archivo.url}}" target="_url">Ver Documento <i class="fas fa-file-pdf"></i></a><br/>
 </div>
 </ons-list-item>
 {{/each}}

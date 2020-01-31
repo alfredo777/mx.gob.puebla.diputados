@@ -62,10 +62,8 @@
         var user = window.localStorage.getItem("user");
 
         if(user == "null" || user == null){
-           alert('Get Intro');
            GetIntro();
         } else {
-           alert('Get Home');
            GetHome();
            var name = window.localStorage.getItem("name");
            setTimeout(function(){

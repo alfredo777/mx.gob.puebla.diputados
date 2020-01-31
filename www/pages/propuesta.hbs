@@ -2,7 +2,7 @@
 	<div class="pull-left">
 		<center>
 		<div class="circle-2 {{diputado.partido}}"></div>
-		<img src="https://www.congresopuebla.app{{diputado.img.medium.url}}" class="circular-img-2">
+		<img src="{{diputado.img.medium.url}}" class="circular-img-2">
 		<h4>{{diputado.partido}}</h4>
 		</center>
 	</div>
@@ -17,7 +17,7 @@
 			<h2 class="card__title" style="color:#847041;">{{propuesta.titulo}}</h2>
 			<p>Propuesta para {{propuesta.fecha}}</p>
 			<div class="card__content"><br/>{{propuesta.propuesta}}</div><br/>
-			<a href="http://172.10.200.66:3000{{propuesta.documento.url}}" target="_url" class="button">Ver Documento <i class="fas fa-file-pdf"></i></a><br/><br/><br/>
+			<a href="{{propuesta.documento.url}}" target="_url" class="button">Ver Documento <i class="fas fa-file-pdf"></i></a><br/><br/><br/>
 			</center>
 		</div>
 	</div>
