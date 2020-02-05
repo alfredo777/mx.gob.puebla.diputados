@@ -36,26 +36,21 @@ window.XMLHttpRequest = newXHR;
       'virtual': device.isVirtual,
       'serial': device.serial*/
 
-function loginINC(){
+function RegisterINC(){
 
   var nombre = $('#nombre').val();
   var apellidos = $('#apellidos').val();
   var email = $('#email').val();
-  var cp = $('#cp').val();
   var municipio = $('#municipio').val();
-  var seccionel = $('#seccionel').val();
-
+  var password = $('#password').val();
 
   var data = {
       'nombre': nombre,
       'apellidos': apellidos,
       'email': email,
-      'cp': cp,
       'municipio': municipio,
-      'seccionel': seccionel    
+      'password': password    
   }
-
-
     $.ajax({
         url: HOST+'/api_general/register_user',
         cache: true,
@@ -63,6 +58,10 @@ function loginINC(){
         dataType: 'json',
         contentType: 'application/json',
         success: function (json) {
+             if(json.id == null || json.id == "null"){
+              alert(json.respuesta);
+
+             }else{
              console.log(json);
              alert(json.respuesta);
              window.localStorage.setItem("user", json.id);
@@ -72,12 +71,52 @@ function loginINC(){
              var name = window.localStorage.getItem("name");
              $('#myname').html(name);
              GetHome();
+             }
         },
         error: function(error) {
           alert(error);
         }
     });
 
+
+}
+
+
+function LogginAPP(){
+    var email = $('#emailingreso').val();
+    var password = $('#passwordingreso').val();
+
+    var data = {
+      'email': email,
+      'password': password    
+    }
+
+    $.ajax({
+        url: HOST+'/api_general/loggin_user',
+        cache: true,
+        data: data,
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function (json) {
+             if(json.id == null || json.id == "null"){
+              alert(json.respuesta);
+
+             }else{
+             console.log(json);
+             alert(json.respuesta);
+             window.localStorage.setItem("user", json.id);
+             window.localStorage.setItem("email", json.email);
+             window.localStorage.setItem("name", json.name);
+             window.localStorage.setItem("municipio", json.municipio);
+             var name = window.localStorage.getItem("name");
+             $('#myname').html(name);
+             GetHome();
+             }
+        },
+        error: function(error) {
+          alert(error);
+        }
+    });
 
 }
 
@@ -130,6 +169,15 @@ function LoadProfile(id){
 changePage('profile.html');
 data = HOST+"/api_general/diputado?id="+id;
 HTPL("perfil", 'perfil', data);
+}
+
+
+function Loggin(){
+  setTimeout(function(){
+  LoadHTML('./pages/loggin.hbs', 'loginxfg');
+  },100);
+  changePage('loggin.html');
+
 
 }
 
@@ -232,5 +280,19 @@ function AyudaSoporte(){
   LoadHTML('./pages/soporte.html','soportexgt');
 }
 
+
+function animateCSS(element, animationName, callback) {
+    const node = document.querySelector(element)
+    node.classList.add('animated', animationName)
+
+    function handleAnimationEnd() {
+        node.classList.remove('animated', animationName)
+        node.removeEventListener('animationend', handleAnimationEnd)
+
+        if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
+}
 
 

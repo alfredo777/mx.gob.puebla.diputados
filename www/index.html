@@ -39,7 +39,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
     <link rel="stylesheet" href="css/onsenui.css">
-    <link rel="stylesheet" href="css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="css/onsen-css-components.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="css/animate.css">    
@@ -49,7 +49,13 @@
 </head>
 
 <body>
-    <div class="app" id="app">
+    <div class="app" id="img" style="display: none;">
+        <div class="verticalhorizontal">
+        <img src="img/l3.png" width="80%">
+        </div>
+    </div>
+    <div class="app" id="app" >
+        
     </div>
     <script type="text/javascript" src="js/bundle.js"></script>
     <script type="text/javascript" src="js/hbhelpers.js"></script>
@@ -58,19 +64,41 @@
     <script type="text/javascript" src="cordova.js"></script>
 
     <script type="text/javascript">
-    $(document).ready(function(){
-        var user = window.localStorage.getItem("user");
+                   GetHome();
 
-        if(user == "null" || user == null){
-           GetIntro();
-        } else {
-           GetHome();
-           var name = window.localStorage.getItem("name");
-           setTimeout(function(){
-            $('#myname').html(name);
-           },1100);
-        }
-    });
+/*    $(document).ready(function(){
+
+        animateCSS('.verticalhorizontal', 'zoomIn');
+
+        setTimeout(function(){
+            animateCSS('.verticalhorizontal', 'zoomOut');
+        },2000)
+
+        setTimeout(function(){
+            $('#img').hide();
+        },2200);
+        
+        setTimeout(function(){
+                var user = window.localStorage.getItem("user");
+                if(user == "null" || user == null){
+                   GetIntro();
+                } else {
+                   GetHome();
+                   var name = window.localStorage.getItem("name");
+                   setTimeout(function(){
+                    $('#myname').html(name);
+                   },1000);
+              }
+              setTimeout(function(){
+                $('#app').slideToggle("slow","swing");
+                $('ons-back-button').addClass('button-x');
+
+
+            },100);
+        },2220);
+
+    }); */
+
     </script>
 
 </body>
