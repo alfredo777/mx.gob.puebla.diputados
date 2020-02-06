@@ -17,6 +17,9 @@
             <h3>Conoce a tu diputado</h3><br/>
             <p>y enviale una solicitud.</p>
           </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="GetTOrdersDay();" tappable>
+           Ordenes del Día
+          </ons-list-item>
           <ons-list-item style="color:#fff;" onclick="Peticiones(window.localStorage.getItem('user'));" tappable>
             Mis Solicitudes
           </ons-list-item>
@@ -344,6 +347,26 @@
       </div>
     </ons-toolbar>
     <div id="soportexgt"></div>
+  </ons-page>
+</template>
+
+
+<template id="ordenesdeldia.html" >
+  <ons-page>
+      <ons-toolbar class="root-tool">
+      <div class="left" style="color:#fff !important;">
+        <ons-back-button> <img src="img/icons-app/arrow_line.png" width="20px" style="margin-top:10px; margin-left: 10px;"> </ons-back-button>
+      </div>
+      <div class="center" style="color:#fff !important;">
+        Ordenes del Día
+      </div>
+       <div class="right" style="color:#fff !important;">
+         <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
+          <img src="img/icons-app/burguer.png" width="40px" style="margin-top:5px;">
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+    <div id="ordenesdeldiaxgt"></div>
   </ons-page>
 </template>
 

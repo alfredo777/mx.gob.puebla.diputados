@@ -7,7 +7,7 @@
 <br/><br/>
 <div class="title">
   <h3>{{nombre}} {{apellido}}</h3>
-  <h4 class="text-{{partido}}">Partido: {{partido}}</h4>
+  <h4 class="text-{{blankid partido}}">Partido: {{partido}}</h4>
 </div>
 </center>
 </div>
@@ -41,12 +41,11 @@
 </div> 
 <div class="content axdiv-card"  style=" background:transparent; margin-top: 30px;">
   <ons-list class="axdiv-card">
-  <ons-list-header>Información</ons-list-header>
-  <ons-list-item>Partido: {{partido}}</ons-list-item>
-  <ons-list-item>Distrito: {{distrito}}</ons-list-item>
-  <ons-list-item>Cargo: {{cargo}}</ons-list-item>
+  <ons-list-item><b>Partido:</b> {{partido}}</ons-list-item>
+  <ons-list-item><b>Distrito:</b> {{distrito}}</ons-list-item>
+  <ons-list-item><b>Cargo:</b> {{cargo}}</ons-list-item>
   <ons-list-item expandable>
-      Biografía
+      <b>Biografía</b>
       <div class="expandable-content justify-text">{{bio}}</div>
     </ons-list-item>
   </ons-list>

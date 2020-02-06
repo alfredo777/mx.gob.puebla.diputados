@@ -1,11 +1,10 @@
 <iframe frameborder="0" allowfullscreen="true" src="https://www.youtube.com/embed/live_stream?channel=UC_3biGcNq8hEPq_n8zG2OKg&amp;enablejsapi=1&amp;amp=1&amp;playsinline=1&amp;iv_load_policy=3" class="i-amphtml-fill-content" allow="autoplay;" style="width: 100%;"></iframe>
+{{#if nextorder.fecha}}
 <center><p>Proxima en {{nextorder.fecha}}</p></cetner>
+{{/if}}
 <ons-list>
-{{#each nextorder.propuestas}}
-<ons-list-item modifier="longdivider" expandable><div class="left">{{index}}</div> <div class="center">{{titulo}}</div>
-<div class="expandable-content">{{propuesta}} <br/>
-	<a href="{{archivo.url}}" target="_url">Ver Documento <i class="fas fa-file-pdf"></i></a><br/>
-</div>
+{{#each ordenes_anteriores}}
+<ons-list-item modifier="longdivider" href="{{video}}" rel="external" target="_blank" tappable><div class="left">{{index}}</div> <div class="center"> Tansmisión del día {{fecha}}</div>
 </ons-list-item>
 {{/each}}
 </ons-list>

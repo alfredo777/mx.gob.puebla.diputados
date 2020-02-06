@@ -72,10 +72,14 @@ $.ajax({
 }
 
 
-
-
-
 Handlebars.registerHelper("inc", function(value, options)
 {
   return parseInt(value) + 1;
 });
+
+
+Handlebars.registerHelper("blankid", function(context, options){
+  var string = context.replace(" ", "");
+  console.log("string ----->"+ string);
+  return new Handlebars.SafeString(string);
+})

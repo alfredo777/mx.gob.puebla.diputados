@@ -217,6 +217,13 @@ function GetTrasmision(fecha){
   HTPL("nexttrasnmision", 'transmisionx', data);
 }
 
+
+function GetTOrdersDay(fecha){
+  changePage('ordenesdeldia.html');
+  data = HOST+"/api_general/transmision";
+  HTPL("ordenesdeldia", 'ordenesdeldiaxgt', data);
+}
+
 function sendFormBase(){
 
   var formData = new FormData($("#form-action-base")[0]);

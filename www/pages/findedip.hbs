@@ -2,9 +2,9 @@
 <ons-list >
 	{{#each diputados}}
 	<ons-list-item modifier="chevron material" onclick="LoadProfile({{id}})" tappable>
-		<div class="left"><img class="list-item__thumbnail" src="{{img.mini.url}}" /></div>
+		<div class="left"><img class="list-item__thumbnail border-{{blankid partido}}" src="{{img.mini.url}}" /></div>
 		<div class="center"><span class="list-item__title">{{nombre}} {{apellido}}</span>
-		<span class="list-item__subtitle">{{distrito}}</span></div>
+		<span class="list-item__subtitle"><b>Legisla en tu Municipio</b></span></div>
 	</ons-list-item>
 	{{/each}}
 </ons-list>

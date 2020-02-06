@@ -1,0 +1,8 @@
+<img src="img/envivo.jpg" width="100%">
+
+<ons-list>
+{{#each ordenes_anteriores}}
+<ons-list-item modifier="longdivider chevron material" onclick="window.open('{{archivo}}', '_system'); return false;" rel="external" target="_blank" tappable><div class="left"><div class="gold-circle">{{inc @index}}</div></div> <div class="center"> Documento de la fecha: {{fecha}}</div>
+</ons-list-item>
+{{/each}}
+</ons-list>
