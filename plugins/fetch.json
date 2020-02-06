@@ -41,6 +41,14 @@
     "is_top_level": true,
     "variables": {}
   },
+  "customer-header-inappbrowser": {
+    "source": {
+      "type": "registry",
+      "id": "customer-header-inappbrowser"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
   "cordova-plugin-inappbrowser": {
     "source": {
       "type": "registry",

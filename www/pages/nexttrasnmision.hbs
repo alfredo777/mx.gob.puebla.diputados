@@ -4,7 +4,7 @@
 {{/if}}
 <ons-list>
 {{#each ordenes_anteriores}}
-<ons-list-item modifier="longdivider chevron material" onclick="window.open('{{video}}', '_system'); return false;" rel="external" target="_blank" tappable><div class="left"><div class="gold-circle">{{inc @index}}</div></div> <div class="center"> Tansmisión del día {{fecha}}</div>
+<ons-list-item modifier="longdivider chevron material" onclick="cordova.InAppBrowser.open('{{video}}', '_system'); return false;" rel="external" target="_blank" tappable><div class="left"><div class="gold-circle">{{inc @index}}</div></div> <div class="center"> Tansmisión del día {{fecha}}</div>
 </ons-list-item>
 {{/each}}
 </ons-list>
