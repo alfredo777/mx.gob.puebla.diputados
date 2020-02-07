@@ -10,33 +10,30 @@
           <ons-list-item  style="color:#fff;" onclick="GetHome();" tappable>
             Inicio
           </ons-list-item>
-          <ons-list-item style="color:#fff;" onclick="GetHome();" tappable>
-            Mi cuenta &nbsp;  <div id="myname"></div>
-          </ons-list-item>
           <ons-list-item style="color:#fff;" onclick="DipFinder();" tappable>
-            <h3>Conoce a tu diputado</h3><br/>
-            <p>y enviale una solicitud.</p>
-          </ons-list-item>
-          <ons-list-item style="color:#fff;" onclick="GetTOrdersDay();" tappable>
-           Ordenes del Día
+            Conoce a tu diputado
           </ons-list-item>
           <ons-list-item style="color:#fff;" onclick="Peticiones(window.localStorage.getItem('user'));" tappable>
             Mis Solicitudes
           </ons-list-item>
-          <ons-list-item style="color:#fff;" onclick="Privacidad();" tappable>
-            Privacidad
+          <ons-list-item style="color:#fff;" onclick="GetTrasmision();" tappable>
+            En Vivo
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="GetTOrdersDay();" tappable>
+           Orden del Día
           </ons-list-item>
           <ons-list-item style="color:#fff;" onclick="changePage('mypetitions.html');" tappable>
             Tutorial
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="Privacidad();" tappable>
+            Aviso de Privacidad
           </ons-list-item>
           <ons-list-item style="color:#fff;" onclick="AyudaSoporte();" tappable>
             Ayuda y Soporte
           </ons-list-item>
           <ons-list-item style="color:#fff;" onclick="CloseSESSion();" tappable>
-            Cerrar mi aplicación
+            Cerrar sesión
           </ons-list-item>
-
-          
         </ons-list>
         </div>
       </ons-page>
@@ -50,7 +47,7 @@
   <ons-page>
   <ons-toolbar class="root-tool">
       <div class="left" style="color:#fff;">
-       &nbsp; &nbsp; Diputados
+       &nbsp; &nbsp; Tus Diputados
       </div>
       <div class="right" style="color:#fff !important;">
          <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
@@ -135,7 +132,7 @@
         <ons-back-button> <img src="img/icons-app/arrow_line.png" width="20px" style="margin-top:10px; margin-left: 10px;"> </ons-back-button>
       </div>
       <div class="center" style="color:#fff !important;">
-        Propuestas
+        Iniciativas
       </div>
        <div class="right" style="color:#fff !important;">
          <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
@@ -178,7 +175,7 @@
         <ons-back-button> <img src="img/icons-app/arrow_line.png" width="20px" style="margin-top:10px; margin-left: 10px;"> </ons-back-button>
       </div>
       <div class="center" style="color:#fff !important;">
-        Ranking
+        Desempeño Legislativo
       </div>
        <div class="right" style="color:#fff !important;">
          <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
@@ -240,7 +237,7 @@
         <ons-back-button> <img src="img/icons-app/arrow_line.png" width="20px" style="margin-top:10px; margin-left: 10px;"> </ons-back-button>
       </div>
       <div class="center" style="color:#fff !important;">
-       Transmisión en vivo
+       En vivo
       </div>
        <div class="right" style="color:#fff !important;">
          <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">
@@ -358,7 +355,7 @@
         <ons-back-button> <img src="img/icons-app/arrow_line.png" width="20px" style="margin-top:10px; margin-left: 10px;"> </ons-back-button>
       </div>
       <div class="center" style="color:#fff !important;">
-        Ordenes del Día
+        Orden del Día
       </div>
        <div class="right" style="color:#fff !important;">
          <ons-toolbar-button onclick="OpenMenu()" style="color:#fff !important;">

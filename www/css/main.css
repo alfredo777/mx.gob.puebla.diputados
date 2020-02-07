@@ -9,12 +9,14 @@
 }
 
 .circular-img-2{
-	width: 100px;
-	height: 100px;
+	width: 70px;
+	height: 70px;
 	border: solid #bd8e2e 0px;
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 	border-radius: 100px;
+	margin-top: 20px;
+
 
 }
 
@@ -26,6 +28,16 @@
 
 .justify-text{
 	text-align: justify;
+}
+
+.single-circle{
+	width: 30px;
+	height: 30px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	position: relative;
+	float: left;
 }
 
 .circle{
@@ -47,8 +59,8 @@
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
-	margin-top: 80px;
-    margin-left: 68%;
+	margin-top: 70px;
+    margin-left: 60%;
 	z-index: 99999;
 	position: absolute;
 }
@@ -258,8 +270,9 @@
 
 .axdiv-card{
 	background: #f1f2f1 !important;
-	padding: 10px;
+	padding: 0px;
 	color: #727372 !important;
+	margin-bottom: 10px;
 }
 
 .head-carrousell{
@@ -291,5 +304,135 @@
 .button-x{
 	color:#fff !important;
 	font-size: 40px !important;
+}
+
+
+@keyframes gradient { 
+  0%{background-position:0 0}
+  100%{background-position:100% 0}
+}
+
+.webflow-style-input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1.4rem 2rem 1.6rem;
+  background: rgba(231, 232, 231, 0.8);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border-color: transparent;
+  color: #010101;
+  margin-bottom: 7px;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    height: 2px;
+    background-position: 0% 0%;
+    background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
+    background-size: 500% auto;
+    animation: gradient 3s linear infinite;
+  }
+  &::placeholder {
+	  color: #fff;
+  }
+}
+
+.webflow-style-input input {
+  flex-grow: 1;
+  color: #BFD2FF;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+  &::-webkit-input-placeholder {
+    color: #7881A1;
+  }
+}
+
+.webflow-style-input button {
+  color:  #7881A1;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+  transition: color .25s;
+  &:hover {
+    color: #BFD2FF;
+  }
+}
+
+
+.custom-select{
+    position: relative;
+	display: block;
+	max-width: 400px;
+	min-width: 180px;
+	width: 80%;
+	margin: 0 auto;
+	padding: 1.4rem 2rem 1.6rem;
+	margin: 0 auto;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	border-color: transparent;
+	background-color: rgba(231, 232, 231, 0.8);
+	z-index: 10;
+    margin-bottom: 7px;
+  &select{
+    border: none;
+    outline: none
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    width: 100%;
+    padding: 12px 55px 15px 15px;
+    font-size: 14px;
+    color: #714BB9;
+  }
+  &:after{;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    line-height: 38px;
+    content: '\2228';
+    text-align: center;
+    color: #714BB9;
+    font-size: 24px;
+    border-left: 1px solid #3C1C78;
+    z-index: -1;
+  }
+}
+
+
+
+
+.head-for{
+	background: #d8dde0;
+	width: 90%;
+	margin-left: 5%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color:#777a83;
+	-webkit-border-bottom-right-radius: 30px;
+	-webkit-border-bottom-left-radius: 30px;
+	-moz-border-radius-bottomright: 30px;
+	-moz-border-radius-bottomleft: 30px;
+	border-bottom-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+	font-size: 25px;
+	font-weight: 900;
+	text-align: center;
+	margin-top:-15px; 
 }
 

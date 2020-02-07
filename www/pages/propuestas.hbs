@@ -1,13 +1,15 @@
-<div class="axdiv-card" style="width:98%; position:relative; float:left;">
-	<div class="pull-left">
+<ons-card modifier="material modifier2 super-card">
+<div class="axdiv-card" style="width:100%; position:relative; float:left;">
+	<div class="pull-left" style="width: 30%;">
 		<center>
     	<div class="circle-2 {{diputado.partido}}"></div> 
 		<img src="{{diputado.img.medium.url}}" class="circular-img-2">
-		<h4>{{diputado.partido}}</h4>
 		</center>
     </div>
-	<div class="title pull-left" style="max-width: 60%;">
-	  &nbsp;&nbsp;<h3>{{diputado.nombre}} {{diputado.apellido}}</h3>
+	<div class="title pull-left" style="width: 70%;">
+	  <p style="margin-top: 17px; font-size: 15px; width: 80%;"><b>{{diputado.nombre}} {{diputado.apellido}}</b></p>
+	  <p style="margin-top: 17px; font-size: 12px; width: 80%;" class="text-{{blankid diputado.partido}}">{{diputado.partido}}</p>
+
 	</div>
 </div>
 <div class="pull-left" style="width:100%;">
@@ -15,11 +17,10 @@
 <ons-list>
 	<ons-list-item modifier="material" >
 	<div class="left">
-		<h1 style="font-size:40px; color: #989998;">{{propuestas.length}}</h1> &nbsp;<img src="img/icons-app/filtros.png" width="25px">
-
+		<h1 style="font-size:30px; color: #989998;">{{propuestas.length}}</h1> &nbsp; 
 	</div>
 	<div class="center">
-	<center><h3 style="color:#847041;">&nbsp; Propuestas presentadas </h3></center>
+         <h3 style="color:#847041;">&nbsp; Iniciativas presentadas</h3>
     </div>
     </ons-list-item>
 	{{#each propuestas}}
@@ -32,5 +33,5 @@
 	</ons-list-item>
 	{{/each}}
 </ons-list>
-
 </div>
+</ons-card>
