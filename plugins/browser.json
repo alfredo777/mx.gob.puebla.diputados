@@ -25,6 +25,9 @@
     },
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "mx.gob.congresopuebla.diputados"
+    },
+    "cordova-plugin-fullscreen": {
+      "PACKAGE_NAME": "mx.gob.congresopuebla.diputados"
     }
   },
   "dependent_plugins": {}
