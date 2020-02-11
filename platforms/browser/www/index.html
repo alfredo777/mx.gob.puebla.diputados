@@ -129,11 +129,22 @@
                    setTimeout(function(){
                     $('#myname').html(name);
                    },1000);
+
+                setTimeout(function(){
+                   OrderDAyNotice();
+                },5000);
+
+                setTimeout(function(){
+                   SessionDAyNotice();
+                },35000);
+
+                setTimeout(function(){
+                   FindDIpNotice();
+                },89000);
               }
               setTimeout(function(){
                 $('#app').slideToggle("slow","swing");
                 $('ons-back-button').addClass('button-x');
-
 
             },100);
         },2220);

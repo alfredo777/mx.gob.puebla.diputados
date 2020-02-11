@@ -302,4 +302,37 @@ function animateCSS(element, animationName, callback) {
     node.addEventListener('animationend', handleAnimationEnd)
 }
 
+function GetGAllery(){
+  changePage("privacidad.html");
+}
+
+function CongresGalleryNotice(){
+  ons.notification.toast("<p>Te invitamos a que conozcas la galleria del congreso. <br/></p>",{
+    timeout: 5000,
+    buttonLabel: "<a onclick='GetGAllery()'> Ir a la galeria </a>" 
+  });
+}
+
+
+function OrderDAyNotice(){
+  ons.notification.toast("<p>Recuerda revisar nuestra sección de Orden del Día. <br/></p>",{
+    timeout: 6000,
+    buttonLabel: "<a onclick='GetTOrdersDay()'> Ver orden del día </a>" 
+  });
+}
+
+function SessionDAyNotice(){
+  ons.notification.toast("<p>Mira las sesiones del congreso del estado. <br/></p>",{
+    timeout: 6000,
+    buttonLabel: "<a onclick='GetTrasmision()'> Ver sesiones </a>" 
+  });
+}
+
+function FindDIpNotice(){
+  ons.notification.toast("<p>Recuerda que puedes encontrar que diputado corresponde a tu localidad. <br/></p>",{
+    timeout: 6000,
+    buttonLabel: "<a onclick='DipFinder();'> Conocer Diputado. </a>" 
+  });
+}
+
 
