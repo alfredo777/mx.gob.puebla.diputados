@@ -279,7 +279,9 @@ function DipFinder(){
 
 function Privacidad(){
   changePage('privacidad.html');
-  LoadHTML('./pages/privacidad.html','privacidadxgt');
+  data = HOST+"/api_general/privacidad";
+  console.log(data);
+  HTPL("privacidad", 'privacidadxgt', data);
 }
 
 function AyudaSoporte(){
