@@ -6,10 +6,10 @@
 	<br/>
 	<center>
 	<label for="Describa_a_detalle_el_problema_por_el_cual_acude_con_nosotros">Describa a detalle el problema por el cual acude con nosotros</label>	<br/><br/>
-	<input type="text" name="peticion" id="peticion" placeholder="Razón de contacto o petición" class="webflow-style-input" required="required">
-	<input type="text" name="nombres" id="nombres" placeholder="Nombre(s) de la persona" class="webflow-style-input"  required="required">
-	<input type="text" name="apellidos" id="apellidos" placeholder="Apellido(s) de la persona" class="webflow-style-input"  required="required">
-	<select name="edad" id="edad" class="custom-select" >
+	<input type="text" name="peticion" id="peticion" placeholder="Razón de contacto o petición" class="webflow-style-input" required="required"  autofocus="true">
+	<input type="text" name="nombres" id="nombres" placeholder="Nombre(s) de la persona" class="webflow-style-input"  required="required"  autofocus="true">
+	<input type="text" name="apellidos" id="apellidos" placeholder="Apellido(s) de la persona" class="webflow-style-input"  required="required"  autofocus="true">
+	<select name="edad" id="edad" class="custom-select"  autofocus="true" >
 	<option value="">Selecciona tu edad</option>
 	<option value="1">1</option>
 	<option value="2">2</option>
@@ -166,7 +166,7 @@
 	<option value="Mujer">Mujer</option>
 	<option value="Hombre">Hombre</option></select>
 
-	<select name="estado_civil" id="estado_civil" class="custom-select" >
+	<select name="estado_civil" id="estado_civil" class="custom-select"  autofocus="true">
 	<option value="Seleccione un estado civil...">Seleccione un estado civil...</option>
 	<option value="Soltero">Soltero</option>
 	<option value="Casado">Casado</option>
@@ -175,7 +175,7 @@
 	<option value="Divorciad@">Divorciad@</option>
 	<option value="Separad@">Separad@</option></select>
 
-	<input type="text" name="curp" id="curp" placeholder="CURP" class="webflow-style-input">
+	<input type="text" name="curp" id="curp" placeholder="CURP" class="webflow-style-input"  autofocus="true">
 
 	<select name="identificacion_oficial" id="identificacion_oficial" class="custom-select">
 	<option selected="selected" value="">Identificación a presentar</option>
@@ -186,15 +186,15 @@
 	<option value="Cartilla">Cartilla</option>
     </select>
 
-	<input type="text" name="numero_o_codigo_identificacion_oficial" id="numero_o_codigo_identificacion_oficial" placeholder="Número de INE, IFE, Licencia, Cédula o Cartilla" class="webflow-style-input"  required="required">
-	<input type="text" name="telefono_casa" id="telefono_casa" placeholder="Teléfono casa" class="webflow-style-input" />
-	<input type="text" name="celular" id="celular" placeholder="Celular" class="webflow-style-input"  required="required">
+	<input type="text" name="numero_o_codigo_identificacion_oficial" id="numero_o_codigo_identificacion_oficial" placeholder="Número de INE, IFE, Licencia, Cédula o Cartilla" class="webflow-style-input"  required="required"  autofocus="true">
+	<input type="text" name="telefono_casa" id="telefono_casa" placeholder="Teléfono casa" class="webflow-style-input"  autofocus="true"/>
+	<input type="text" name="celular" id="celular" placeholder="Celular" class="webflow-style-input"  required="required"  autofocus="true">
 	<input type="text" name="email" id="email" placeholder="Email" class="webflow-style-input" >
 	<input type="text" name="direccion" id="direccion" placeholder="Escribe tu direccion completa aqui" class="webflow-style-input" >
 	<br>
 	<div style="display:none;">
 		<label for="Direcci_n">Dirección</label>
-	<textarea name="adress" id="adress" placeholder="Escribe tu dirección completa" style="width:100%;" required="required"></textarea></div>
+	<textarea name="adress" id="adress" placeholder="Escribe tu dirección completa" style="width:100%;" required="required"  autofocus="true"></textarea></div>
 	<br>
 	<button onclick="sendFormBase()"  class="button--large button" data-disable-with="Enviar la solicitud">Enviar Gestión</button>
 </form>
