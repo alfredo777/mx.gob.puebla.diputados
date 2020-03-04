@@ -9,6 +9,7 @@
     "cordova-browser": "^6.0.0",
     "cordova-plugin-fullscreen": "^1.2.0",
     "cordova-plugin-inappbrowser": "^3.2.0",
+    "cordova-plugin-wkwebview-engine": "^1.2.1",
     "customer-header-inappbrowser": "^1.0.1"
   },
   "devDependencies": {
@@ -29,7 +30,8 @@
       "cordova-plugin-whitelist": {},
       "cordova-plugin-inappbrowser": {},
       "customer-header-inappbrowser": {},
-      "cordova-plugin-fullscreen": {}
+      "cordova-plugin-fullscreen": {},
+      "cordova-plugin-wkwebview-engine": {}
     },
     "platforms": [
       "browser"

@@ -81,7 +81,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.2",
     "phonegap-plugin-push": "1.8.4",
     "cordova-plugin-inappbrowser": "3.2.0",
-    "cordova-plugin-fullscreen": "1.1.0"
+    "cordova-plugin-fullscreen": "1.1.0",
+    "cordova-plugin-wkwebview-engine": "1.2.1"
 }
 // BOTTOM OF METADATA
 });
