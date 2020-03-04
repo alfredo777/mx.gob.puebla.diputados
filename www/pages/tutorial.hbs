@@ -348,78 +348,7 @@ console.log('Changed to ' + event.activeIndex)
 
 </ons-if>
 
-
 <ons-if platform="ios">
-<ons-carousel id="carousel">
-<ons-carousel-item style=" height: 100vh; background:#8d713c; background-size: 100% 100%; overflow:auto;">
-<div class="head-carrousell">
-      <br/>
-      <center><img src="img/h0.png" width="100%"></center>
-</div>
-<div class="body-carrousell" >
-      <br/><br/><br/>
-      <center>
-      <img src="img/r1.png" width="70%">
-      </center>
-      <br>
-      <center>
-      <p>Bienvenido al Congreso del Estado de Puebla, en esta herramienta de vinculación conocerás los trabajos que se realizan en el poder legislativo y de tus diputadas y diputados. </p>
-      <div class="circlerow list-item--tappable" style="bottom: 10px; position: absolute; left: 41%;" onclick="next()">&rarr;</div>
-      </center>
-</div>
-</ons-carousel-item>
-<ons-carousel-item style=" height: 100vh; background:#8d713c; background-size: 100% 100%; overflow:auto;" >
-<div class="head-carrousell">
-      <br/>
-      <center><img src="img/h3.png" width="100%"></center>
-</div>
-<div class="body-carrousell" >
-      <br/><br/><br/>
-      <center>
-      <img src="img/r2.png" width="70%">
-      </center>
-      <br>
-      <center>
-      <p>Podrás conocer los trabajos que realiza la LX legislatura, así como el desempeño de cada grupo parlamentario por partido.</p>
-      <div class="circlerow list-item--tappable" style="bottom: 10px; position: absolute; left: 41%;"  onclick="next()">&rarr;</div>
-      </center>
-</div>
-</ons-carousel-item>
-<ons-carousel-item style=" height: 100vh; background:#8d713c; background-size: 100% 100%; overflow:auto;">
-<div class="head-carrousell">
-      <br/>
-      <center><img src="img/h2.png" width="100%"></center>
-</div>
-<div class="body-carrousell" >
-      <br/><br/><br/>
-      <center>
-      <img src="img/r3.png" width="70%">
-      </center>
-      <br>
-      <center>
-      <p>Genera solicitudes a tus diputados y gestiona directamente una petición o solicitud mediante un buzón, mira las sesiones en vivo y consulta el orden del día.</p>
-      <div class="circlerow list-item--tappable" onclick="next()" style="bottom: 10px; position: absolute; left: 41%;" >&rarr;</div>
-      </center>
-</div>
-</ons-carousel-item>
-<ons-carousel-item style=" height: 100vh; background:#8d713c; background-size: 100% 100%; overflow:auto;">
-<div class="head-carrousell">
-      <br/>
-      <center><img src="img/h1.png" width="100%"></center>
-</div>
-<div class="body-carrousell" >
-      <br/><br/><br/>
-      <center>
-      <img src="img/r4.png" width="70%">
-      </center>
-      <br>
-      <center>
-      <p>Para poder conocer los trabajos legislativos que tus diputados realizan  necesitas darte de alta con unos simples pasos.</p>
-      <div class="circlerow list-item--tappable" onclick="next()" style="bottom: 10px; position: absolute; left: 41%;" >&rarr;</div>
-      </center>
-</div>
-</ons-carousel-item>
-<ons-carousel-item style="background-color: #fff;  height: 100vh; overflow:auto;">
 <div style="text-align: center; font-size: 30px; margin-top: 10px; color: #fff;">
       <div style="text-align: center; margin-top: 30px;">
             <center>
@@ -674,29 +603,6 @@ console.log('Changed to ' + event.activeIndex)
             </form>
       </div>
 </div>
-</ons-carousel-item>
-</ons-carousel>
-
-
-
-
-
-<script type="text/javascript">
-var prev = function() {
-var carousel = document.getElementById('carousel');
-carousel.prev();
-};
-var next = function() {
-var carousel = document.getElementById('carousel');
-carousel.next();
-};
-ons.ready(function() {
-var carousel = document.addEventListener('postchange', function(event) {
-console.log('Changed to ' + event.activeIndex)
-});
-});
-</script>
-
 </ons-if>
 
 
