@@ -2,7 +2,7 @@
 <ons-carousel fullscreen swipeable auto-scroll overscrollable id="carousel">
 </ons-if>
 <ons-if platform="ios other">
-<ons-carousel fullscreen auto-scroll overscrollable id="carousel">
+<ons-carousel fullscreen swipeable  id="carousel" initial-index="0">
 </ons-if>
 
 <ons-carousel-item style=" height: 100vh; background:#8d713c; background-size: 100% 100%; overflow:auto;">
@@ -330,6 +330,11 @@
 </div>
 </ons-carousel-item>
 </ons-carousel>
+
+
+
+
+
 <script type="text/javascript">
 var prev = function() {
 var carousel = document.getElementById('carousel');
