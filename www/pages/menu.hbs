@@ -1,5 +1,9 @@
 <ons-splitter  >
+
+    <ons-if platform="android">
+
     <ons-splitter-side id="menu" side="right" width="90%"  collapse swipeable style="width: 100%; height: 100vh; background: #5c666c; position: absolute; z-index: 99999999999999999999 !important;">
+
       <ons-page>
         <div style="width: 100%; height: 100vh; background: #5c666c; position: absolute; z-index: 99999999999999999999 !important;">
           <br/>
@@ -45,13 +49,73 @@
            </center>
 
             <div style="bottom: 0px; position: absolute; text-align: right; width:100%;">
-              V. 1.0.0
+              V. 1.0.0 Android
             </div>
 
         </ons-list>
         </div>
       </ons-page>
     </ons-splitter-side>
+    </ons-if>
+
+    <ons-if platform="ios">
+
+    <ons-splitter-side id="menu" side="right" width="90%"  collapse swipeable style="width: 100%; height: 100vh; background: #5c666c; position: absolute; z-index: 99999999999999999999 !important; margin-top:-20px !important;">
+
+      <ons-page>
+        <div style="width: 100%; height: 100vh; background: #5c666c; position: absolute; z-index: 99999999999999999999 !important;">
+          <br/>
+        <center>
+        <img src="img/l2.png" width="60%">
+      </center>
+        <ons-list style="background: #5c666c; color:#fff;">
+          <ons-list-item  style="color:#fff;" onclick="GetHome();" tappable>
+            Inicio
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="DipFinder();" tappable>
+            Conoce a tu diputado
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="Peticiones(window.localStorage.getItem('user'));" tappable>
+            Mis Solicitudes
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="GetTrasmision();" tappable>
+            En Vivo
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="GetTOrdersDay();" tappable>
+           Orden del Día
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="changePage('mypetitions.html');" tappable>
+            Tutorial
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="Privacidad();" tappable>
+            Aviso de Privacidad
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="AyudaSoporte();" tappable>
+            Ayuda y Soporte
+          </ons-list-item>
+          <ons-list-item style="color:#fff;" onclick="CloseSESSion();" tappable>
+            Cerrar sesión
+          </ons-list-item>
+
+            <center>
+             <div style="margin-top: 20px;">
+             <a onclick="cordova.InAppBrowser.open('https://www.facebook.com/hcongresopuebla/', '_system'); return false;" ><img src="img/fb.png" width="40px;"> </a>
+             <a onclick="cordova.InAppBrowser.open('https://twitter.com/CongresoPue', '_system'); return false;"><img src="img/tr.png" width="40px;"> </a>
+             <a onclick="cordova.InAppBrowser.open('https://www.instagram.com/congresodelestadodepuebla/', '_system'); return false;"><img src="img/ins.png" width="40px;"> </a>
+             <a onclick="cordova.InAppBrowser.open('https://www.youtube.com/channel/UC_3biGcNq8hEPq_n8zG2OKg', '_system'); return false;"><img src="img/yt.png" width="40px;"> </a>
+           </div>
+           </center>
+
+            <div style="bottom: 0px; position: absolute; text-align: right; width:100%;">
+              V. 1.0.0 Android
+            </div>
+
+        </ons-list>
+        </div>
+      </ons-page>
+    </ons-splitter-side>
+    </ons-if>
+
     <ons-navigator swipeable id="navigateINDEX" animation="slide" page="home.html" animation-options="{duration: 0.2, delay: 0.1, timing: 'ease-in'}">
     </ons-navigator>
  
