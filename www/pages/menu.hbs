@@ -1,10 +1,11 @@
 <ons-splitter  >
 
-    <ons-if platform="android">
 
     <ons-splitter-side id="menu" side="right" width="90%"  collapse swipeable style="width: 100%; height: 100vh; background: #5c666c; position: absolute; z-index: 99999999999999999999 !important;">
 
       <ons-page>
+        <ons-if platform="android">
+
         <div style="width: 100%; height: 100vh; background: #5c666c; position: absolute; z-index: 99999999999999999999 !important;">
           <br/>
         <center>
@@ -54,17 +55,11 @@
 
         </ons-list>
         </div>
-      </ons-page>
-    </ons-splitter-side>
-    </ons-if>
+        </ons-if>
+        <ons-if platform="ios">
 
-    <ons-if platform="ios">
-
-    <ons-splitter-side id="menu" side="right" width="90%"  collapse swipeable style="width: 100%; height: 100vh; background: #5c666c; position: absolute; z-index: 99999999999999999999 !important; margin-top:-20px !important;">
-
-      <ons-page>
-        <div style="width: 100%; height: 100vh; background: #5c666c; position: absolute; z-index: 99999999999999999999 !important;">
-          <br/>
+        <div style="width: 100%; height: 100vh; background: #5c666c; position: absolute; z-index: 99999999999999999999 !important; margin-top:-30px !important;">
+          <br/><br/>
         <center>
         <img src="img/l2.png" width="60%">
       </center>
@@ -107,14 +102,14 @@
            </center>
 
             <div style="bottom: 0px; position: absolute; text-align: right; width:100%;">
-              V. 1.0.0 Android
+              V. 1.0.0 IOS
             </div>
 
         </ons-list>
         </div>
+        </ons-if>
       </ons-page>
     </ons-splitter-side>
-    </ons-if>
 
     <ons-navigator swipeable id="navigateINDEX" animation="slide" page="home.html" animation-options="{duration: 0.2, delay: 0.1, timing: 'ease-in'}">
     </ons-navigator>
