@@ -8,6 +8,7 @@
   "dependencies": {
     "cordova-browser": "^6.0.0",
     "cordova-plugin-fullscreen": "^1.2.0",
+    "cordova-plugin-hidden-statusbar-overlay": "^2.0.1",
     "cordova-plugin-inappbrowser": "^3.2.0",
     "customer-header-inappbrowser": "^1.0.1"
   },
@@ -29,7 +30,8 @@
       "cordova-plugin-whitelist": {},
       "cordova-plugin-inappbrowser": {},
       "customer-header-inappbrowser": {},
-      "cordova-plugin-fullscreen": {}
+      "cordova-plugin-fullscreen": {},
+      "cordova-plugin-hidden-statusbar-overlay": {}
     },
     "platforms": [
       "browser"

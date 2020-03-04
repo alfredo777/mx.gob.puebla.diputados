@@ -64,5 +64,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-hidden-statusbar-overlay": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-hidden-statusbar-overlay"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }
