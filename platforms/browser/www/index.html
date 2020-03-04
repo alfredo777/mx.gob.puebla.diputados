@@ -107,8 +107,16 @@
     <script type="text/javascript" src="js/bundle.js"></script>
     <script type="text/javascript" src="js/hbhelpers.js"></script>
     <script type="text/javascript" src="js/callfunctions.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 
     <script type="text/javascript" src="cordova.js"></script>
+
+
+    <script type="text/javascript">
+        document.addEventListener('deviceready', function () {
+            cordova.plugins.statusbarOverlay.hide();
+        }, false);
+    </script>
 
     <ons-if platform="ios">
         <script type="text/javascript">
