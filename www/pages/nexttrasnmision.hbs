@@ -1,3 +1,4 @@
+<ons-if platform="android">
 <iframe frameborder="0" allowfullscreen="true" src="https://www.youtube.com/embed/live_stream?channel=UC_3biGcNq8hEPq_n8zG2OKg&amp;enablejsapi=1&amp;amp=1&amp;playsinline=1&amp;iv_load_policy=3" class="i-amphtml-fill-content" allow="autoplay;" style="width: 100%;"></iframe>
 {{#if nextorder.fecha}}
 <center><p>Proxima en {{nextorder.fecha}}</p></cetner>
@@ -8,3 +9,14 @@
 </ons-list-item>
 {{/each}}
 </ons-list>
+</ons-if>
+<ons-if platform="ios">
+{{#if nextorder.fecha}}
+<center><p>Proxima en {{nextorder.fecha}}</p></cetner>
+{{/if}}
+<ons-list>
+{{#each ordenes_anteriores}}
+<ons-list-item modifier="longdivider chevron material" onclick="cordova.InAppBrowser.open('{{video}}', '_system'); return false;" rel="external" target="_blank" tappable><div class="left"><div class="gold-circle">{{inc @index}}</div></div> <div class="center"> Tansmisión del día {{fecha}}</div>
+</ons-list-item>
+{{/each}}
+</ons-if>
