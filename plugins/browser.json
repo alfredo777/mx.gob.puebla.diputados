@@ -28,9 +28,6 @@
     },
     "cordova-plugin-fullscreen": {
       "PACKAGE_NAME": "mx.gob.congresopuebla.diputados"
-    },
-    "cordova-plugin-wkwebview-engine": {
-      "PACKAGE_NAME": "app.congresopuebla.www"
     }
   },
   "dependent_plugins": {}

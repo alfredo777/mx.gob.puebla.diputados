@@ -91,7 +91,7 @@
 
             .share-dial {display: none;}
 
-    </style> 
+        </style> 
 </head>
 
 <body>
@@ -110,8 +110,13 @@
 
     <script type="text/javascript" src="cordova.js"></script>
 
-    <script type="text/javascript">
+    <ons-if platform="ios">
+        <script type="text/javascript">
+             document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+        </script>
+    </ons-if>
 
+    <script type="text/javascript">
     $(document).ready(function(){
         setTimeout(function(){
             animateCSS('.verticalhorizontal', 'zoomOut');

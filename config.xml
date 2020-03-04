@@ -45,12 +45,6 @@
         <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
     </platform>
     <platform name="ios">
-        <plugin name="cordova-plugin-wkwebview-engine" />
-        <feature name="CDVWKWebViewEngine">
-          <param name="ios-package" value="CDVWKWebViewEngine" />
-        </feature>
-         <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
-         <preference name="AllowBackForwardNavigationGestures" value="true" />
 
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="www/res/icon/ios/icon@2x.png" width="114" />
