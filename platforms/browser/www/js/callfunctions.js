@@ -183,8 +183,9 @@ function Loggin(){
 
 function Solicitud(id){
   changePage('solicitud.html');
-  HTPL("form_peticion", 'solicitud', "./data/form_peticion.json");
   var user_id = window.localStorage.getItem("user");
+  data = "";
+  HTPL("form_peticion", 'solicitud', data);
   setTimeout(function(){
      document.getElementById('form-action-base-id').innerHTML = "<input type='text' id='diputado_id' name='id' style='display:none;' value="+"'"+id+"'"+"></input>";
      document.getElementById('form-action-user-id').innerHTML = "<input type='text' id='user_id' name='user_id' style='display:none;' value="+"'"+user_id+"'"+"></input>";
