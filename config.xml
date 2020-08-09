@@ -22,7 +22,6 @@
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <plugin name="cordova-plugin-fullscreen" source="npm" spec="~1.2.0" />
     <plugin name="cordova-plugin-hidden-statusbar-overlay" spec="https://github.com/katzer/cordova-plugin-hidden-statusbar-overlay" />
-
     <preference name="orientation" value="portrait" />
     <platform name="android">
         <plugin name="cordova-plugin-console" source="npm" spec="~1.0.3" />
