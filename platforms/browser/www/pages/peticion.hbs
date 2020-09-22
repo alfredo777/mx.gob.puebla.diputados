@@ -2,10 +2,29 @@
 	<div style="height: 400px; oveflow:auto; text-align:justify; padding 10px;">
 		<div class="card">
 			<center>
-			<h2 class="card__title" style="color:#847041;">{{nombres}} {{apellidos}}</h2>
-			<p>{{peticion}}</p>
-			<div class="card__content"><br/>{{created_at}}</div><br/>
+			<h2 class="card__title" style="color:#847041;">{{peticion.nombres}} {{peticion.apellidos}}</h2>
+			<p>{{peticion.peticion}}</p>
 			</center>
+			<hr/>
+			{{#if respuesta}}
+			{{#each respuesta}}
+			<ons-card modifier="material modifier2 super-card">
+			<div class="content"  style="background:transparent; margin-top: 10px; border: no-border;  padding:10px;">
+				<p><b>Respuesta:</b>{{respuesta}}</p>
+				<hr/>
+				{{#if satisfactoria}}
+				Se ha respondido su solicitud
+				{{else}}
+				Es necesario procesar su solicitud nuevamente
+				{{/if}}
+			</div>
+			<hr/>
+			<ons-list-item modifier="longdivider chevron material"  onclick="cordova.InAppBrowser.open('{{documento_acuse.url}}', '_system'); return false;" rel="external" target="_blank" tappable> Documento de respuesta </ons-list-item>
+			</ons-card>
+			{{/each}}
+			{{else}}
+			<center><p><b>Su solicitud esta en proceso</b></p></center>
+			{{/if}}
 		</div>
 	</div>
 </div>

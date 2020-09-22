@@ -1,5 +1,5 @@
 var HOST = "https://www.congresopuebla.app";
-
+//var HOST = "http://192.168.1.71:3000";
 
 var oldXHR = window.XMLHttpRequest;
 function newXHR() {
